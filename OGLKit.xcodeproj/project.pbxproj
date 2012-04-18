@@ -11,6 +11,7 @@
 		D023933C153E7C240041E325 /* libOGLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D023933B153E7C240041E325 /* libOGLKit.m */; };
 		D0239341153E7C460041E325 /* OGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716379153E6E5700D4E9B8 /* OGLView.m */; };
 		D0239342153E7C510041E325 /* OGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716375153E6E3100D4E9B8 /* OGLViewController.m */; };
+		D0239348153E7E2A0041E325 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0239347153E7E2A0041E325 /* GameViewController.m */; };
 		D071635C153E6DE900D4E9B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635B153E6DE900D4E9B8 /* UIKit.framework */; };
 		D071635E153E6DE900D4E9B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635D153E6DE900D4E9B8 /* Foundation.framework */; };
 		D0716360153E6DE900D4E9B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635F153E6DE900D4E9B8 /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 		D0239339153E7C240041E325 /* libOGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libOGLKit-Prefix.pch"; sourceTree = "<group>"; };
 		D023933A153E7C240041E325 /* libOGLKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOGLKit.h; sourceTree = "<group>"; };
 		D023933B153E7C240041E325 /* libOGLKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libOGLKit.m; sourceTree = "<group>"; };
+		D0239346153E7E2A0041E325 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D0239347153E7E2A0041E325 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		D0716357153E6DE900D4E9B8 /* OGLKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OGLKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D071635B153E6DE900D4E9B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D071635D153E6DE900D4E9B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,9 +105,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D0239343153E7D950041E325 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				D0239345153E7DEF0041E325 /* ViewControllers */,
+				D0716372153E6DFE00D4E9B8 /* OGLAppDelegate */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		D0239345153E7DEF0041E325 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0239346153E7E2A0041E325 /* GameViewController.h */,
+				D0239347153E7E2A0041E325 /* GameViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		D071634C153E6DE900D4E9B8 = {
 			isa = PBXGroup;
 			children = (
+				D0239343153E7D950041E325 /* Demo */,
 				D0716361153E6DE900D4E9B8 /* OGLKit */,
 				D0239337153E7C240041E325 /* libOGLKit */,
 				D071635A153E6DE900D4E9B8 /* Frameworks */,
@@ -138,7 +160,6 @@
 			children = (
 				D0716383153E70F800D4E9B8 /* Third Party */,
 				D0716373153E6E0D00D4E9B8 /* OGLViewController */,
-				D0716372153E6DFE00D4E9B8 /* OGLAppDelegate */,
 				D0716362153E6DE900D4E9B8 /* Supporting Files */,
 			);
 			path = OGLKit;
@@ -162,6 +183,7 @@
 				D071636B153E6DE900D4E9B8 /* OGLAppDelegate.m */,
 			);
 			name = OGLAppDelegate;
+			path = OGLKit;
 			sourceTree = "<group>";
 		};
 		D0716373153E6E0D00D4E9B8 /* OGLViewController */ = {
@@ -317,6 +339,7 @@
 				D0716390153E712C00D4E9B8 /* CC3GLMatrix.m in Sources */,
 				D0716391153E712C00D4E9B8 /* CC3Kazmath.c in Sources */,
 				D0716392153E712C00D4E9B8 /* CC3Math.m in Sources */,
+				D0239348153E7E2A0041E325 /* GameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

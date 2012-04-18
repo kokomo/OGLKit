@@ -12,7 +12,10 @@
 
 @interface OGLView : UIView
 
+// This is really self.layer, which happens to be a CAEAGLLayer
 @property (nonatomic, readonly) CAEAGLLayer *eaglLayer;
+
+// If you set this yourself, you must use kEAGLRenderingAPIOpenGLES2
 @property (nonatomic, strong) EAGLContext *context;
 
 @end
