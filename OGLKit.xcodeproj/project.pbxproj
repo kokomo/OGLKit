@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0239336153E7C240041E325 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635D153E6DE900D4E9B8 /* Foundation.framework */; };
+		D023933C153E7C240041E325 /* libOGLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D023933B153E7C240041E325 /* libOGLKit.m */; };
+		D0239341153E7C460041E325 /* OGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716379153E6E5700D4E9B8 /* OGLView.m */; };
+		D0239342153E7C510041E325 /* OGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716375153E6E3100D4E9B8 /* OGLViewController.m */; };
 		D071635C153E6DE900D4E9B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635B153E6DE900D4E9B8 /* UIKit.framework */; };
 		D071635E153E6DE900D4E9B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635D153E6DE900D4E9B8 /* Foundation.framework */; };
 		D0716360153E6DE900D4E9B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635F153E6DE900D4E9B8 /* CoreGraphics.framework */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0239335153E7C240041E325 /* libOGLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOGLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0239339153E7C240041E325 /* libOGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libOGLKit-Prefix.pch"; sourceTree = "<group>"; };
+		D023933A153E7C240041E325 /* libOGLKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOGLKit.h; sourceTree = "<group>"; };
+		D023933B153E7C240041E325 /* libOGLKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libOGLKit.m; sourceTree = "<group>"; };
 		D0716357153E6DE900D4E9B8 /* OGLKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OGLKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D071635B153E6DE900D4E9B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D071635D153E6DE900D4E9B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +61,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D0239332153E7C240041E325 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0239336153E7C240041E325 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0716354153E6DE900D4E9B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,10 +84,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0239337153E7C240041E325 /* libOGLKit */ = {
+			isa = PBXGroup;
+			children = (
+				D023933A153E7C240041E325 /* libOGLKit.h */,
+				D023933B153E7C240041E325 /* libOGLKit.m */,
+				D0239338153E7C240041E325 /* Supporting Files */,
+			);
+			path = libOGLKit;
+			sourceTree = "<group>";
+		};
+		D0239338153E7C240041E325 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0239339153E7C240041E325 /* libOGLKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D071634C153E6DE900D4E9B8 = {
 			isa = PBXGroup;
 			children = (
 				D0716361153E6DE900D4E9B8 /* OGLKit */,
+				D0239337153E7C240041E325 /* libOGLKit */,
 				D071635A153E6DE900D4E9B8 /* Frameworks */,
 				D0716358153E6DE900D4E9B8 /* Products */,
 			);
@@ -81,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D0716357153E6DE900D4E9B8 /* OGLKit.app */,
+				D0239335153E7C240041E325 /* libOGLKit.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,7 +210,34 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D0239333153E7C240041E325 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		D0239334153E7C240041E325 /* libOGLKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D023933D153E7C240041E325 /* Build configuration list for PBXNativeTarget "libOGLKit" */;
+			buildPhases = (
+				D0239331153E7C240041E325 /* Sources */,
+				D0239332153E7C240041E325 /* Frameworks */,
+				D0239333153E7C240041E325 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libOGLKit;
+			productName = libOGLKit;
+			productReference = D0239335153E7C240041E325 /* libOGLKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		D0716356153E6DE900D4E9B8 /* OGLKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D071636F153E6DE900D4E9B8 /* Build configuration list for PBXNativeTarget "OGLKit" */;
@@ -215,6 +278,7 @@
 			projectRoot = "";
 			targets = (
 				D0716356153E6DE900D4E9B8 /* OGLKit */,
+				D0239334153E7C240041E325 /* libOGLKit */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +295,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D0239331153E7C240041E325 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D023933C153E7C240041E325 /* libOGLKit.m in Sources */,
+				D0239341153E7C460041E325 /* OGLView.m in Sources */,
+				D0239342153E7C510041E325 /* OGLViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0716353153E6DE900D4E9B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +334,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D023933E153E7C240041E325 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/libOGLKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libOGLKit/libOGLKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = OGLKit;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D023933F153E7C240041E325 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/libOGLKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libOGLKit/libOGLKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = OGLKit;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D071636D153E6DE900D4E9B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,6 +428,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D023933D153E7C240041E325 /* Build configuration list for PBXNativeTarget "libOGLKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D023933E153E7C240041E325 /* Debug */,
+				D023933F153E7C240041E325 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D0716351153E6DE900D4E9B8 /* Build configuration list for PBXProject "OGLKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -346,6 +452,7 @@
 				D0716371153E6DE900D4E9B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
