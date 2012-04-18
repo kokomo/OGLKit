@@ -13,6 +13,14 @@
 		D0716366153E6DE900D4E9B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0716364153E6DE900D4E9B8 /* InfoPlist.strings */; };
 		D0716368153E6DE900D4E9B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716367153E6DE900D4E9B8 /* main.m */; };
 		D071636C153E6DE900D4E9B8 /* OGLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D071636B153E6DE900D4E9B8 /* OGLAppDelegate.m */; };
+		D0716376153E6E3100D4E9B8 /* OGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716375153E6E3100D4E9B8 /* OGLViewController.m */; };
+		D071637A153E6E5700D4E9B8 /* OGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716379153E6E5700D4E9B8 /* OGLView.m */; };
+		D0716380153E6F9D00D4E9B8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071637F153E6F9D00D4E9B8 /* OpenGLES.framework */; };
+		D0716382153E6FA500D4E9B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0716381153E6FA500D4E9B8 /* QuartzCore.framework */; };
+		D071638F153E712C00D4E9B8 /* CC3Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716386153E712C00D4E9B8 /* CC3Foundation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0716390153E712C00D4E9B8 /* CC3GLMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716388153E712C00D4E9B8 /* CC3GLMatrix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0716391153E712C00D4E9B8 /* CC3Kazmath.c in Sources */ = {isa = PBXBuildFile; fileRef = D0716389153E712C00D4E9B8 /* CC3Kazmath.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0716392153E712C00D4E9B8 /* CC3Math.m in Sources */ = {isa = PBXBuildFile; fileRef = D071638D153E712C00D4E9B8 /* CC3Math.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +28,28 @@
 		D071635B153E6DE900D4E9B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D071635D153E6DE900D4E9B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D071635F153E6DE900D4E9B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D0716363153E6DE900D4E9B8 /* OGLKit-Info.plist */ = {isa = PBXFileReference; path = "OGLKit-Info.plist"; sourceTree = "<group>"; };
+		D0716363153E6DE900D4E9B8 /* OGLKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OGLKit-Info.plist"; sourceTree = "<group>"; };
 		D0716365153E6DE900D4E9B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0716367153E6DE900D4E9B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D0716369153E6DE900D4E9B8 /* OGLKit-Prefix.pch */ = {isa = PBXFileReference; path = "OGLKit-Prefix.pch"; sourceTree = "<group>"; };
-		D071636A153E6DE900D4E9B8 /* OGLAppDelegate.h */ = {isa = PBXFileReference; path = OGLAppDelegate.h; sourceTree = "<group>"; };
+		D0716369153E6DE900D4E9B8 /* OGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OGLKit-Prefix.pch"; sourceTree = "<group>"; };
+		D071636A153E6DE900D4E9B8 /* OGLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OGLAppDelegate.h; sourceTree = "<group>"; };
 		D071636B153E6DE900D4E9B8 /* OGLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OGLAppDelegate.m; sourceTree = "<group>"; };
+		D0716374153E6E3100D4E9B8 /* OGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLViewController.h; sourceTree = "<group>"; };
+		D0716375153E6E3100D4E9B8 /* OGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLViewController.m; sourceTree = "<group>"; };
+		D0716378153E6E5700D4E9B8 /* OGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLView.h; sourceTree = "<group>"; };
+		D0716379153E6E5700D4E9B8 /* OGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLView.m; sourceTree = "<group>"; };
+		D071637F153E6F9D00D4E9B8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D0716381153E6FA500D4E9B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D0716385153E712C00D4E9B8 /* CC3Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Foundation.h; sourceTree = "<group>"; };
+		D0716386153E712C00D4E9B8 /* CC3Foundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Foundation.m; sourceTree = "<group>"; };
+		D0716387153E712C00D4E9B8 /* CC3GLMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3GLMatrix.h; sourceTree = "<group>"; };
+		D0716388153E712C00D4E9B8 /* CC3GLMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3GLMatrix.m; sourceTree = "<group>"; };
+		D0716389153E712C00D4E9B8 /* CC3Kazmath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CC3Kazmath.c; sourceTree = "<group>"; };
+		D071638A153E712C00D4E9B8 /* CC3Kazmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Kazmath.h; sourceTree = "<group>"; };
+		D071638B153E712C00D4E9B8 /* CC3Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Logging.h; sourceTree = "<group>"; };
+		D071638C153E712C00D4E9B8 /* CC3Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Math.h; sourceTree = "<group>"; };
+		D071638D153E712C00D4E9B8 /* CC3Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Math.m; sourceTree = "<group>"; };
+		D071638E153E712C00D4E9B8 /* ccTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0716382153E6FA500D4E9B8 /* QuartzCore.framework in Frameworks */,
+				D0716380153E6F9D00D4E9B8 /* OpenGLES.framework in Frameworks */,
 				D071635C153E6DE900D4E9B8 /* UIKit.framework in Frameworks */,
 				D071635E153E6DE900D4E9B8 /* Foundation.framework in Frameworks */,
 				D0716360153E6DE900D4E9B8 /* CoreGraphics.framework in Frameworks */,
@@ -62,6 +88,8 @@
 		D071635A153E6DE900D4E9B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0716381153E6FA500D4E9B8 /* QuartzCore.framework */,
+				D071637F153E6F9D00D4E9B8 /* OpenGLES.framework */,
 				D071635B153E6DE900D4E9B8 /* UIKit.framework */,
 				D071635D153E6DE900D4E9B8 /* Foundation.framework */,
 				D071635F153E6DE900D4E9B8 /* CoreGraphics.framework */,
@@ -72,8 +100,9 @@
 		D0716361153E6DE900D4E9B8 /* OGLKit */ = {
 			isa = PBXGroup;
 			children = (
-				D071636A153E6DE900D4E9B8 /* OGLAppDelegate.h */,
-				D071636B153E6DE900D4E9B8 /* OGLAppDelegate.m */,
+				D0716383153E70F800D4E9B8 /* Third Party */,
+				D0716373153E6E0D00D4E9B8 /* OGLViewController */,
+				D0716372153E6DFE00D4E9B8 /* OGLAppDelegate */,
 				D0716362153E6DE900D4E9B8 /* Supporting Files */,
 			);
 			path = OGLKit;
@@ -88,6 +117,59 @@
 				D0716369153E6DE900D4E9B8 /* OGLKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0716372153E6DFE00D4E9B8 /* OGLAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D071636A153E6DE900D4E9B8 /* OGLAppDelegate.h */,
+				D071636B153E6DE900D4E9B8 /* OGLAppDelegate.m */,
+			);
+			name = OGLAppDelegate;
+			sourceTree = "<group>";
+		};
+		D0716373153E6E0D00D4E9B8 /* OGLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D0716377153E6E4600D4E9B8 /* OGLView */,
+				D0716374153E6E3100D4E9B8 /* OGLViewController.h */,
+				D0716375153E6E3100D4E9B8 /* OGLViewController.m */,
+			);
+			name = OGLViewController;
+			sourceTree = "<group>";
+		};
+		D0716377153E6E4600D4E9B8 /* OGLView */ = {
+			isa = PBXGroup;
+			children = (
+				D0716378153E6E5700D4E9B8 /* OGLView.h */,
+				D0716379153E6E5700D4E9B8 /* OGLView.m */,
+			);
+			name = OGLView;
+			sourceTree = "<group>";
+		};
+		D0716383153E70F800D4E9B8 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				D0716384153E710500D4E9B8 /* CC3D */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		D0716384153E710500D4E9B8 /* CC3D */ = {
+			isa = PBXGroup;
+			children = (
+				D0716385153E712C00D4E9B8 /* CC3Foundation.h */,
+				D0716386153E712C00D4E9B8 /* CC3Foundation.m */,
+				D0716387153E712C00D4E9B8 /* CC3GLMatrix.h */,
+				D0716388153E712C00D4E9B8 /* CC3GLMatrix.m */,
+				D0716389153E712C00D4E9B8 /* CC3Kazmath.c */,
+				D071638A153E712C00D4E9B8 /* CC3Kazmath.h */,
+				D071638B153E712C00D4E9B8 /* CC3Logging.h */,
+				D071638C153E712C00D4E9B8 /* CC3Math.h */,
+				D071638D153E712C00D4E9B8 /* CC3Math.m */,
+				D071638E153E712C00D4E9B8 /* ccTypes.h */,
+			);
+			name = CC3D;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +237,12 @@
 			files = (
 				D0716368153E6DE900D4E9B8 /* main.m in Sources */,
 				D071636C153E6DE900D4E9B8 /* OGLAppDelegate.m in Sources */,
+				D0716376153E6E3100D4E9B8 /* OGLViewController.m in Sources */,
+				D071637A153E6E5700D4E9B8 /* OGLView.m in Sources */,
+				D071638F153E712C00D4E9B8 /* CC3Foundation.m in Sources */,
+				D0716390153E712C00D4E9B8 /* CC3GLMatrix.m in Sources */,
+				D0716391153E712C00D4E9B8 /* CC3Kazmath.c in Sources */,
+				D0716392153E712C00D4E9B8 /* CC3Math.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
