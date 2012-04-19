@@ -63,7 +63,7 @@
     
     CC3GLMatrix *modelViewMatrix = [CC3GLMatrix identity];
     
-    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -5.0f)];
+    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, 0.0f)];
 
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
@@ -86,8 +86,10 @@
     self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"SimpleVertex" fragmentShader:@"SimpleFragment"];    
     [self.simpleProgram addAttribute:@"Position"];
     [self.simpleProgram addAttribute:@"Normal"];
-    glEnableVertexAttribArray([self.simpleProgram attributeIndex:@"Position"]);
-    glEnableVertexAttribArray([self.simpleProgram attributeIndex:@"Normal"]);
+    GLuint positionSlot = [self.simpleProgram attributeIndex:@"Position"];
+    GLuint normalSlot = [self.simpleProgram attributeIndex:@"Normal"];
+    glEnableVertexAttribArray(positionSlot);
+    glEnableVertexAttribArray(normalSlot);
     [self.simpleProgram use];
 
 }

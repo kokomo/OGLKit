@@ -13,7 +13,6 @@
 
 @interface OGLProgram : NSObject {
     
-    NSMutableArray *_attributes;
     NSMutableArray *_uniforms;
     GLuint _program;
     GLuint _verteixShader;
@@ -23,7 +22,6 @@
 
 - (id)initWithVertexShader:(NSString *)vertexShader fragmentShader:(NSString *)fragmentShader;
 - (void)use;
-- (void)addAttribute:(NSString *)attributeName;
 - (GLuint)attributeIndex:(NSString *)attributeName;
 - (GLuint)uniformIndex:(NSString *)uniformName;
 
