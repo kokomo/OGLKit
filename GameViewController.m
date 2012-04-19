@@ -30,10 +30,16 @@
         _vbos = [NSMutableArray new];
         
         Cube *cube = [Cube new];
-        cube.yRot = 30.0f;
-        cube.xRot = 20.0f;
+        cube.yPos = -2.0f;
         [cube setColorWithUIColor:[UIColor redColor]];
         [_vbos addObject:cube];
+        
+        Cube *cube2 = [Cube new];
+        cube2.yPos = 0.5f;
+        cube2.xPos = 0.5f;
+        cube2.zPos = 2.0f;
+        [cube2 setColorWithUIColor:[UIColor blueColor]];
+        [_vbos addObject:cube2];
         
     }
     
@@ -48,6 +54,8 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     
+    glEnable(GL_CULL_FACE);
+    
     glBindRenderbuffer(GL_RENDERBUFFER, _colorRenderBuffer);
     
     CC3GLMatrix *projection = [CC3GLMatrix matrix];
@@ -57,18 +65,19 @@
     [projection populateFromFrustumLeft:-2.0f andRight:2.0f andBottom:-h / 2.0f andTop:h / 2.0f andNear:4.0f andFar:100.0f];
     
     glUniformMatrix4fv([_simpleProgram uniformIndex:@"Projection"], 1, GL_FALSE, projection.glMatrix);
-    glUniform3f([_simpleProgram uniformIndex:@"LightDirection"], 10.0, 10.0, 10.0f);
 
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     CC3GLMatrix *modelViewMatrix = [CC3GLMatrix identity];
     
-    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, 0.0f)];
-
+    glUniform3f([_simpleProgram uniformIndex:@"LightDirection"], 15.0, 0.0, 0.0f);
+    
+    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -10.0f)];
+    
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
     for (OGLVBO *vbo in _vbos) {
-     
+             
         [scratchMatrix populateFrom:modelViewMatrix];
         vbo.yRot = sin(CACurrentMediaTime()) * 50.0f;
         vbo.zRot = sin(CACurrentMediaTime()) * 10.0f;

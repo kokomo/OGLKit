@@ -38,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		228890D91540ACDD0095EFCF /* car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
 		D0239335153E7C240041E325 /* libOGLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOGLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0239339153E7C240041E325 /* libOGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libOGLKit-Prefix.pch"; sourceTree = "<group>"; };
 		D023933A153E7C240041E325 /* libOGLKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOGLKit.h; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 		D05039D3153F9F03008A1AC6 /* Cube */ = {
 			isa = PBXGroup;
 			children = (
+				228890D91540ACDD0095EFCF /* car.h */,
 				D05039D4153F9F1D008A1AC6 /* Cube.h */,
 				D05039D5153F9F1D008A1AC6 /* Cube.m */,
 			);
