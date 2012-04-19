@@ -8,6 +8,14 @@
 
 #import "OGLViewController.h"
 
-@interface GameViewController : OGLViewController
+@class OGLProgram;
+
+@interface GameViewController : OGLViewController {
+    
+    NSMutableArray *_vbos;
+    
+}
+
+@property (nonatomic, strong) OGLProgram *simpleProgram;
 
 @end

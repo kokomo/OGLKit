@@ -24,6 +24,7 @@
 - (void)setupRenderBuffer;
 - (void)setupFrameBuffer;
 - (void)setupContext;
+- (void)bufferVertexBufferObjects;
 
 @end
 
@@ -62,6 +63,8 @@
     [self setupFrameBuffer];
     [self setupAppleMSAABuffers];
     [self setupDisplayLink];
+    [self compileShaders];
+    [self bufferVertexBufferObjects];
     
 }
 
@@ -74,6 +77,18 @@
 }
 
 #pragma mark OpenGL Setup
+
+- (void)bufferVertexBufferObjects {
+    
+    NSLog(@"Subclasses of OGLViewController should implement - (void)bufferVertexBufferObjects");
+    
+}
+
+- (void)compileShaders {
+
+    NSLog(@"Subclasses of OGLViewController should implement - (void)compileShaders");
+    
+}
 
 - (void)setupLayer {
     

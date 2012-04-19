@@ -37,4 +37,11 @@
 // to take advantage of the anti aliasing provided by Apple.
 - (void)applyAppleMSAA;
 
+// Called inside viewDidLoad. Buffer your OGLVBO subclasses here by calling
+// bufferDataWithProgram: on them.
+- (void)bufferVertexBufferObjects;
+
+// Called inside viewDidLoad:. Create your OGLProgram objects here
+- (void)compileShaders;
+    
 @end
