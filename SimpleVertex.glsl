@@ -20,7 +20,7 @@ void main(void) {
     
     gl_Position = newPosition;
     
-    LightIntensity = max(1.0, dot(newNormal.xyz, vec3(10.0,-10.0,10.0)));
+    LightIntensity = max(1.0, dot(newNormal.xyz, LightDirection));
     DestinationColor = SourceColor;
 
 }
