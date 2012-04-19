@@ -62,9 +62,9 @@
     [self setupRenderBuffer];
     [self setupFrameBuffer];
     [self setupAppleMSAABuffers];
-    [self setupDisplayLink];
     [self compileShaders];
     [self bufferVertexBufferObjects];
+    [self setupDisplayLink];
     
 }
 

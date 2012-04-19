@@ -16,6 +16,8 @@
     
     if (self) {
         
+        _attributes = [NSMutableArray new];
+        
         _verteixShader = [self compileShader:vertexShader withType:GL_VERTEX_SHADER];
         _fragmentShader = [self compileShader:fragmentShader withType:GL_FRAGMENT_SHADER];
         

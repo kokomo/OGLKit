@@ -49,6 +49,7 @@
     glEnable(GL_DEPTH_TEST);
     
     glBindRenderbuffer(GL_RENDERBUFFER, _colorRenderBuffer);
+
     
     CC3GLMatrix *projection = [CC3GLMatrix matrix];
     
@@ -62,7 +63,7 @@
     
     CC3GLMatrix *modelViewMatrix = [CC3GLMatrix identity];
     
-    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -10.0f)];
+    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -5.0f)];
 
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
@@ -83,6 +84,10 @@
 - (void)compileShaders {
     
     self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"SimpleVertex" fragmentShader:@"SimpleFragment"];    
+    [self.simpleProgram addAttribute:@"Position"];
+    [self.simpleProgram addAttribute:@"Normal"];
+    glEnableVertexAttribArray([self.simpleProgram attributeIndex:@"Position"]);
+    glEnableVertexAttribArray([self.simpleProgram attributeIndex:@"Normal"]);
     [self.simpleProgram use];
 
 }
