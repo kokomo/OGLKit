@@ -57,19 +57,22 @@
     [projection populateFromFrustumLeft:-2.0f andRight:2.0f andBottom:-h / 2.0f andTop:h / 2.0f andNear:4.0f andFar:100.0f];
     
     glUniformMatrix4fv([_simpleProgram uniformIndex:@"Projection"], 1, GL_FALSE, projection.glMatrix);
+    glUniform3f([_simpleProgram uniformIndex:@"LightDirection"], 10.0, 10.0, 10.0f);
 
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     CC3GLMatrix *modelViewMatrix = [CC3GLMatrix identity];
     
-    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -10.0f)];
+    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, 0.0f)];
 
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
     for (OGLVBO *vbo in _vbos) {
      
         [scratchMatrix populateFrom:modelViewMatrix];
-        
+        vbo.yRot = sin(CACurrentMediaTime()) * 50.0f;
+        vbo.zRot = sin(CACurrentMediaTime()) * 10.0f;
+        vbo.xRot = sin(CACurrentMediaTime()) * 5.0f;
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.simpleProgram];
         
     }
@@ -83,6 +86,11 @@
 - (void)compileShaders {
     
     self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"SimpleVertex" fragmentShader:@"SimpleFragment"];    
+
+    GLuint positionSlot = [self.simpleProgram attributeIndex:@"Position"];
+    GLuint normalSlot = [self.simpleProgram attributeIndex:@"Normal"];
+    glEnableVertexAttribArray(positionSlot);
+    glEnableVertexAttribArray(normalSlot);
     [self.simpleProgram use];
 
 }

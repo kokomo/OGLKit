@@ -15,12 +15,12 @@
     self = [super init];
     
     if (self) {
-        
+                
         _verteixShader = [self compileShader:vertexShader withType:GL_VERTEX_SHADER];
         _fragmentShader = [self compileShader:fragmentShader withType:GL_FRAGMENT_SHADER];
         
         _program = glCreateProgram();
-        
+    
         glAttachShader(_program, _verteixShader);
         glAttachShader(_program, _fragmentShader);
         glLinkProgram(_program);
@@ -47,22 +47,11 @@
     
 }
 
-- (void)addAttribute:(NSString *)attributeName
-{
-    
-    if (![_attributes containsObject:attributeName]) {
-    
-        [_attributes addObject:attributeName];
-        glBindAttribLocation(_program, [_attributes indexOfObject:attributeName], [attributeName UTF8String]);
-    
-    }
-}
-
 
 - (GLuint)attributeIndex:(NSString *)attributeName {
     
-    return [_attributes indexOfObject:attributeName];
-
+    return glGetAttribLocation(_program, [attributeName UTF8String]);
+    
 }
 
 - (GLuint)uniformIndex:(NSString *)uniformName {
@@ -101,30 +90,6 @@
     }
     
     return shaderHandle;
-    
-}
-
-- (void)compileShaders {
-    
-    GLuint vertexShader = [self compileShader:@"SimpleVertex" 
-                                     withType:GL_VERTEX_SHADER];
-    GLuint fragmentShader = [self compileShader:@"SimpleFragment" 
-                                       withType:GL_FRAGMENT_SHADER];
-    
-    GLuint programHandle = glCreateProgram();
-    glAttachShader(programHandle, vertexShader);
-    glAttachShader(programHandle, fragmentShader);
-    glLinkProgram(programHandle);
-    
-    GLint linkSuccess;
-    glGetProgramiv(programHandle, GL_LINK_STATUS, &linkSuccess);
-    if (linkSuccess == GL_FALSE) {
-        GLchar messages[256];
-        glGetProgramInfoLog(programHandle, sizeof(messages), 0, &messages[0]);
-        NSString *messageString = [NSString stringWithUTF8String:messages];
-        NSLog(@"%@", messageString);
-        exit(1);
-    }
     
 }
 
