@@ -30,6 +30,8 @@
         _vbos = [NSMutableArray new];
         
         Cube *cube = [Cube new];
+        cube.yRot = 30.0f;
+        cube.xRot = 20.0f;
         [cube setColorWithUIColor:[UIColor redColor]];
         [_vbos addObject:cube];
         
@@ -45,6 +47,8 @@
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
+    
+    glBindRenderbuffer(GL_RENDERBUFFER, _colorRenderBuffer);
     
     CC3GLMatrix *projection = [CC3GLMatrix matrix];
     
@@ -69,9 +73,7 @@
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.simpleProgram];
         
     }
-    
-    glBindRenderbuffer(GL_RENDERBUFFER, _colorRenderBuffer);
-    
+        
     [self applyAppleMSAA];
     
     [_oglView.context presentRenderbuffer:GL_RENDERBUFFER];
