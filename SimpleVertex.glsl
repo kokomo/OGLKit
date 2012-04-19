@@ -11,7 +11,7 @@ uniform mat4 Modelview;
 
 varying float LightIntensity;
 
-uniform vec3 lightDirection;
+uniform vec3 LightDirection;
  
 void main(void) { 
 
@@ -19,6 +19,8 @@ void main(void) {
     vec4 newNormal = Projection * Modelview * Normal;
     
     gl_Position = newPosition;
+    
+    LightIntensity = max(1.0, dot(newNormal.xyz, vec3(10.0,-10.0,10.0)));
     DestinationColor = SourceColor;
 
 }

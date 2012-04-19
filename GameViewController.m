@@ -84,8 +84,7 @@
 - (void)compileShaders {
     
     self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"SimpleVertex" fragmentShader:@"SimpleFragment"];    
-    [self.simpleProgram addAttribute:@"Position"];
-    [self.simpleProgram addAttribute:@"Normal"];
+
     GLuint positionSlot = [self.simpleProgram attributeIndex:@"Position"];
     GLuint normalSlot = [self.simpleProgram attributeIndex:@"Normal"];
     glEnableVertexAttribArray(positionSlot);
