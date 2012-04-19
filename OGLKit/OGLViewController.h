@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "OGLView.h"
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface OGLViewController : UIViewController {
     

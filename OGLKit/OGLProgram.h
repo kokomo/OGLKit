@@ -11,6 +11,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
+#import <QuartzCore/QuartzCore.h>
+
 @interface OGLProgram : NSObject {
     
     NSMutableArray *_uniforms;
