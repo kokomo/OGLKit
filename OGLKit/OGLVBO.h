@@ -30,6 +30,10 @@
 @property (nonatomic, assign) GLfloat xRot;
 @property (nonatomic, assign) GLfloat yRot;
 @property (nonatomic, assign) GLfloat zRot;
+@property (nonatomic, assign) GLfixed xScale;
+@property (nonatomic, assign) GLfixed yScale;
+@property (nonatomic, assign) GLfixed zScale;
+
 @property (nonatomic, strong) NSMutableData *color;
 
 // Buffer VBO data in this method

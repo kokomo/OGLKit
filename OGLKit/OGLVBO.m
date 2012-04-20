@@ -22,6 +22,9 @@
 @synthesize xRot = _xRot;
 @synthesize yRot = _yRot;
 @synthesize zRot = _zRot;
+@synthesize xScale = _xScale;
+@synthesize yScale = _yScale;
+@synthesize zScale = _zScale;
 @synthesize color = _color;
 
 - (id)init {
@@ -36,6 +39,9 @@
         self.xRot = 0.0f;
         self.yRot = 0.0f;
         self.zRot = 0.0f;
+        self.xScale = 1.0f;
+        self.yScale = 1.0f;
+        self.zScale = 1.0f;
         GLfloat color[] = {0.5f, 0.5f, 0.5f, 1.0f};
         self.color = [NSMutableData dataWithBytes:color length:sizeof(color)*sizeof(GLfloat)];
         

@@ -8,21 +8,23 @@ varying vec3 v_Position;
 varying vec3 v_Normal;
 
 void main(void) { 
-    
-    float distance = length(u_LightPos - v_Position);
+
+vec3 lightVector = u_LightPos; //normalize(u_LightPos - v_Position);
+
+float diff = max(0.0, dot(normalize(v_Normal), normalize(lightVector)));
+
+float diffuse = max(dot(v_Normal, lightVector), 0.25) * 0.2;
+
+gl_FragColor = diff * (diffuse * v_Color);
+gl_FragColor += (v_Color * 0.75);
+
+vec3 vReflection = normalize(reflect(-normalize(lightVector),normalize(v_Normal)));
  
-    // Get a lighting direction vector from the light to the vertex.
-    vec3 lightVector = normalize(u_LightPos - v_Position);
-     
-    // Calculate the dot product of the light vector and vertex normal. If the normal and light vector are
-    // pointing in the same direction then it will get max illumination.
-    float diffuse = max(dot(v_Normal, lightVector), 1.0);
- 
-    // Add attenuation.
-    diffuse = diffuse * (1.0 / (1.0 + (0.25 * distance * distance)));
- 
-    // Multiply the color by the diffuse illumination level to get final output color.
-    
-    gl_FragColor = v_Color * diffuse;
+ float spec = max(0.0, dot(normalize(v_Normal), vReflection));
+
+ if (diff < 0.2) {
+   float fSpec = pow(spec, 1000.0);
+   gl_FragColor.rgb += vec3(fSpec, fSpec, fSpec);
+ }
 
 }

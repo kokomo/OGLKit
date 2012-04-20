@@ -11,7 +11,10 @@
 #import "CC3GLMatrix.h"
 #import "OGLProgram.h"
 
+#import "OGLCamera.h"
+
 #import "Car.h"
+#import "Box.h"
 
 @interface SimpleShaderViewController ()
 
@@ -20,6 +23,7 @@
 @implementation SimpleShaderViewController
 
 @synthesize simpleProgram = _simpleProgram;
+@synthesize camera = _camera;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -28,22 +32,24 @@
     if (self) {
         
         _vbos = [NSMutableArray new];
-        
-        Car *car2 = [Car new];
-        [car2 setColorWithUIColor:[UIColor redColor]];
-        [_vbos addObject:car2];
-        
+
         Car *car = [Car new];
-        [car setColorWithUIColor:[UIColor blueColor]];
-        car.yPos = -2.0f;
-        car.zPos = -0.5;
+        [car setColorWithUIColor:[UIColor redColor]];
+        car.yRot = 50.0f;
         [_vbos addObject:car];
         
-        Car *car3 = [Car new];
-        [car3 setColorWithUIColor:[UIColor yellowColor]];
-        car3.yPos = 2.0f;
-        car3.zPos = 0.5f;
-        [_vbos addObject:car3];
+        Box *box = [Box new];
+        box.yPos = -1.5f;
+        box.xScale = 10.0f;
+        box.zScale = 10.0f;
+        [box setColorWithUIColor:[UIColor brownColor]];
+        [_vbos addObject:box];
+        
+        _camera = [OGLCamera new];
+        _camera.zPos = -10.0f;
+        _camera.yPos = -4.0f;
+        _camera.yRot = 40.0f;
+
         
     }
     
@@ -74,17 +80,18 @@
     
     CC3GLMatrix *modelViewMatrix = [CC3GLMatrix identity];
         
-    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -7.0f)];
+    [modelViewMatrix translateBy:CC3VectorMake(self.camera.xPos, self.camera.yPos, self.camera.zPos) rotateBy:CC3VectorMake(self.camera.xRot, self.camera.yRot, self.camera.zRot) scaleBy:CC3VectorMake(1.0f, 1.0f, 1.0f)];
     
-    glUniform3f([_simpleProgram uniformIndex:@"u_LightPos"], 0.0f, 0.0f, -4.25f);
+    glUniform3f([_simpleProgram uniformIndex:@"u_LightPos"], 0.0f, -1.0f, 0.0f);
     
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
+    
+    self.camera.zPos = (sin(CACurrentMediaTime()) * 5.0f) - 7.0f;
     
     for (OGLVBO *vbo in _vbos) {
              
         [scratchMatrix populateFrom:modelViewMatrix];
-        vbo.yRot = sin(CACurrentMediaTime()) * 300.0f;
-        vbo.xRot = sin(CACurrentMediaTime()) * 30.0f;
+
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.simpleProgram];
         
     }
@@ -110,7 +117,7 @@
 - (void)bufferVertexBufferObjects {
 
     [Car bufferData];
-    
+    [Box bufferData];
 }
 
 @end

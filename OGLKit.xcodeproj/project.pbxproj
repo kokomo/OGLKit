@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		226A98A01541FFD000041D1A /* OGLCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 226A989E1541FFD000041D1A /* OGLCamera.h */; };
+		226A98A11541FFD000041D1A /* OGLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A989F1541FFD000041D1A /* OGLCamera.m */; };
+		226A98A21541FFD000041D1A /* OGLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A989F1541FFD000041D1A /* OGLCamera.m */; };
+		226A98A6154201EA00041D1A /* Box.h in Headers */ = {isa = PBXBuildFile; fileRef = 226A98A4154201EA00041D1A /* Box.h */; };
+		226A98A7154201EA00041D1A /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A98A5154201EA00041D1A /* Box.m */; };
+		226A98A8154201EA00041D1A /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A98A5154201EA00041D1A /* Box.m */; };
 		D0239336153E7C240041E325 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635D153E6DE900D4E9B8 /* Foundation.framework */; };
 		D023933C153E7C240041E325 /* libOGLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D023933B153E7C240041E325 /* libOGLKit.m */; };
 		D0239341153E7C460041E325 /* OGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716379153E6E5700D4E9B8 /* OGLView.m */; };
@@ -38,6 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		226A989E1541FFD000041D1A /* OGLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLCamera.h; sourceTree = "<group>"; };
+		226A989F1541FFD000041D1A /* OGLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLCamera.m; sourceTree = "<group>"; };
+		226A98A4154201EA00041D1A /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		226A98A5154201EA00041D1A /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		226A98A91542025E00041D1A /* boxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boxModel.h; sourceTree = "<group>"; };
 		228890D91540ACDD0095EFCF /* carModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carModel.h; sourceTree = "<group>"; };
 		D0239335153E7C240041E325 /* libOGLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOGLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0239339153E7C240041E325 /* libOGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libOGLKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -105,6 +116,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		226A989C1541FFB500041D1A /* OGLCamera */ = {
+			isa = PBXGroup;
+			children = (
+				226A989E1541FFD000041D1A /* OGLCamera.h */,
+				226A989F1541FFD000041D1A /* OGLCamera.m */,
+			);
+			name = OGLCamera;
+			sourceTree = "<group>";
+		};
+		226A98A3154201CF00041D1A /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				226A98A91542025E00041D1A /* boxModel.h */,
+				226A98A4154201EA00041D1A /* Box.h */,
+				226A98A5154201EA00041D1A /* Box.m */,
+			);
+			name = Box;
+			sourceTree = "<group>";
+		};
 		D0239337153E7C240041E325 /* libOGLKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +192,7 @@
 		D05039D2153F9EF9008A1AC6 /* SimpleShaderViewController */ = {
 			isa = PBXGroup;
 			children = (
+				226A98A3154201CF00041D1A /* Box */,
 				D05039D3153F9F03008A1AC6 /* Car */,
 				D0239346153E7E2A0041E325 /* SimpleShaderViewController.h */,
 				D0239347153E7E2A0041E325 /* SimpleShaderViewController.m */,
@@ -222,6 +253,7 @@
 		D0716361153E6DE900D4E9B8 /* OGLKit */ = {
 			isa = PBXGroup;
 			children = (
+				226A989C1541FFB500041D1A /* OGLCamera */,
 				D05039CC153F9C27008A1AC6 /* OGLProgram */,
 				D05039C5153F9B5C008A1AC6 /* OGLVBO */,
 				D0716383153E70F800D4E9B8 /* Third Party */,
@@ -314,6 +346,8 @@
 			files = (
 				D05039C9153F9BC1008A1AC6 /* OGLVBO.h in Headers */,
 				D05039CF153F9C3A008A1AC6 /* OGLProgram.h in Headers */,
+				226A98A01541FFD000041D1A /* OGLCamera.h in Headers */,
+				226A98A6154201EA00041D1A /* Box.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +439,8 @@
 				D0239342153E7C510041E325 /* OGLViewController.m in Sources */,
 				D05039CB153F9BC1008A1AC6 /* OGLVBO.m in Sources */,
 				D05039D1153F9C3A008A1AC6 /* OGLProgram.m in Sources */,
+				226A98A21541FFD000041D1A /* OGLCamera.m in Sources */,
+				226A98A8154201EA00041D1A /* Box.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +460,8 @@
 				D05039CA153F9BC1008A1AC6 /* OGLVBO.m in Sources */,
 				D05039D0153F9C3A008A1AC6 /* OGLProgram.m in Sources */,
 				D05039D6153F9F1D008A1AC6 /* Car.m in Sources */,
+				226A98A11541FFD000041D1A /* OGLCamera.m in Sources */,
+				226A98A7154201EA00041D1A /* Box.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
