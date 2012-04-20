@@ -9,8 +9,6 @@
 #import "OGLAppDelegate.h"
 
 #import "SimpleShaderViewController.h"
-#import "PhongShaderViewController.h"
-#import "GoraudShaderViewController.h"
 
 @implementation OGLAppDelegate
 
@@ -21,8 +19,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     SimpleShaderViewController *viewController = [[SimpleShaderViewController alloc] initWithNibName:nil bundle:nil];
-//    PhongShaderViewController *viewController = [[PhongShaderViewController alloc] initWithNibName:nil bundle:nil];
-//    GoraudShaderViewController *viewController = [[GoraudShaderViewController alloc] initWithNibName:nil bundle:nil];
+
     self.window.rootViewController = viewController;
     
     [self.window makeKeyAndVisible];
