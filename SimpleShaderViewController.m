@@ -30,18 +30,19 @@
         _vbos = [NSMutableArray new];
         
         Car *car2 = [Car new];
-        [car2 setColorWithUIColor:[UIColor blueColor]];
+        [car2 setColorWithUIColor:[UIColor redColor]];
         [_vbos addObject:car2];
         
         Car *car = [Car new];
-        [car setColorWithUIColor:[UIColor redColor]];
+        [car setColorWithUIColor:[UIColor blueColor]];
         car.yPos = -2.0f;
+        car.zPos = -0.5;
         [_vbos addObject:car];
         
         Car *car3 = [Car new];
         [car3 setColorWithUIColor:[UIColor yellowColor]];
         car3.yPos = 2.0f;
-        car3.zPos = -7.0f;
+        car3.zPos = 0.5f;
         [_vbos addObject:car3];
         
     }
@@ -75,7 +76,7 @@
         
     [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -7.0f)];
     
-    glUniform3f([_simpleProgram uniformIndex:@"u_LightPos"], 0.0f, -0.0f, -4.5f);
+    glUniform3f([_simpleProgram uniformIndex:@"u_LightPos"], 0.0f, 0.0f, -4.25f);
     
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
