@@ -22,8 +22,8 @@ vec3 vReflection = normalize(reflect(-normalize(lightVector),normalize(v_Normal)
  
  float spec = max(0.0, dot(normalize(v_Normal), vReflection));
 
- if (diff < 0.2) {
-   float fSpec = pow(spec, 1000.0);
+ if (diff != 0.0) {
+   float fSpec = pow(spec, 32.0);
    gl_FragColor.rgb += vec3(fSpec, fSpec, fSpec);
  }
 
