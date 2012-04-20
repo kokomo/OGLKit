@@ -32,7 +32,7 @@
         
         self.xPos = 0.0f;
         self.yPos = 0.0f;
-        self.zPos = -7.0f;
+        self.zPos = 0.0f;
         self.xRot = 0.0f;
         self.yRot = 0.0f;
         self.zRot = 0.0f;
