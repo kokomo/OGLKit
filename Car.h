@@ -8,6 +8,6 @@
 
 #import "OGLVBO.h"
 
-@interface Cube : OGLVBO
+@interface Car : OGLVBO
 
 @end

@@ -11,14 +11,14 @@
 		D023933C153E7C240041E325 /* libOGLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D023933B153E7C240041E325 /* libOGLKit.m */; };
 		D0239341153E7C460041E325 /* OGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716379153E6E5700D4E9B8 /* OGLView.m */; };
 		D0239342153E7C510041E325 /* OGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716375153E6E3100D4E9B8 /* OGLViewController.m */; };
-		D0239348153E7E2A0041E325 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0239347153E7E2A0041E325 /* GameViewController.m */; };
+		D0239348153E7E2A0041E325 /* SimpleShaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0239347153E7E2A0041E325 /* SimpleShaderViewController.m */; };
 		D05039C9153F9BC1008A1AC6 /* OGLVBO.h in Headers */ = {isa = PBXBuildFile; fileRef = D05039C7153F9BC1008A1AC6 /* OGLVBO.h */; };
 		D05039CA153F9BC1008A1AC6 /* OGLVBO.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039C8153F9BC1008A1AC6 /* OGLVBO.m */; };
 		D05039CB153F9BC1008A1AC6 /* OGLVBO.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039C8153F9BC1008A1AC6 /* OGLVBO.m */; };
 		D05039CF153F9C3A008A1AC6 /* OGLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = D05039CD153F9C3A008A1AC6 /* OGLProgram.h */; };
 		D05039D0153F9C3A008A1AC6 /* OGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039CE153F9C3A008A1AC6 /* OGLProgram.m */; };
 		D05039D1153F9C3A008A1AC6 /* OGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039CE153F9C3A008A1AC6 /* OGLProgram.m */; };
-		D05039D6153F9F1D008A1AC6 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039D5153F9F1D008A1AC6 /* Cube.m */; };
+		D05039D6153F9F1D008A1AC6 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039D5153F9F1D008A1AC6 /* Car.m */; };
 		D05039DA153F9F52008A1AC6 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D8153F9F52008A1AC6 /* SimpleVertex.glsl */; };
 		D05039DB153F9F52008A1AC6 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D9153F9F52008A1AC6 /* SimpleFragment.glsl */; };
 		D071635C153E6DE900D4E9B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635B153E6DE900D4E9B8 /* UIKit.framework */; };
@@ -38,19 +38,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		228890D91540ACDD0095EFCF /* car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
+		228890D91540ACDD0095EFCF /* carModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carModel.h; sourceTree = "<group>"; };
 		D0239335153E7C240041E325 /* libOGLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOGLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0239339153E7C240041E325 /* libOGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libOGLKit-Prefix.pch"; sourceTree = "<group>"; };
 		D023933A153E7C240041E325 /* libOGLKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOGLKit.h; sourceTree = "<group>"; };
 		D023933B153E7C240041E325 /* libOGLKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libOGLKit.m; sourceTree = "<group>"; };
-		D0239346153E7E2A0041E325 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		D0239347153E7E2A0041E325 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		D0239346153E7E2A0041E325 /* SimpleShaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleShaderViewController.h; sourceTree = "<group>"; };
+		D0239347153E7E2A0041E325 /* SimpleShaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleShaderViewController.m; sourceTree = "<group>"; };
 		D05039C7153F9BC1008A1AC6 /* OGLVBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLVBO.h; sourceTree = "<group>"; };
 		D05039C8153F9BC1008A1AC6 /* OGLVBO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLVBO.m; sourceTree = "<group>"; };
 		D05039CD153F9C3A008A1AC6 /* OGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLProgram.h; sourceTree = "<group>"; };
 		D05039CE153F9C3A008A1AC6 /* OGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLProgram.m; sourceTree = "<group>"; };
-		D05039D4153F9F1D008A1AC6 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
-		D05039D5153F9F1D008A1AC6 /* Cube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cube.m; sourceTree = "<group>"; };
+		D05039D4153F9F1D008A1AC6 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		D05039D5153F9F1D008A1AC6 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		D05039D8153F9F52008A1AC6 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
 		D05039D9153F9F52008A1AC6 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
 		D0716357153E6DE900D4E9B8 /* OGLKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OGLKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,8 +163,8 @@
 		D05039D2153F9EF9008A1AC6 /* GameViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D0239346153E7E2A0041E325 /* GameViewController.h */,
-				D0239347153E7E2A0041E325 /* GameViewController.m */,
+				D0239346153E7E2A0041E325 /* SimpleShaderViewController.h */,
+				D0239347153E7E2A0041E325 /* SimpleShaderViewController.m */,
 			);
 			name = GameViewController;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 		D05039D3153F9F03008A1AC6 /* Cube */ = {
 			isa = PBXGroup;
 			children = (
-				228890D91540ACDD0095EFCF /* car.h */,
-				D05039D4153F9F1D008A1AC6 /* Cube.h */,
-				D05039D5153F9F1D008A1AC6 /* Cube.m */,
+				228890D91540ACDD0095EFCF /* carModel.h */,
+				D05039D4153F9F1D008A1AC6 /* Car.h */,
+				D05039D5153F9F1D008A1AC6 /* Car.m */,
 			);
 			name = Cube;
 			sourceTree = "<group>";
@@ -182,8 +182,7 @@
 		D05039D7153F9F49008A1AC6 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				D05039D8153F9F52008A1AC6 /* SimpleVertex.glsl */,
-				D05039D9153F9F52008A1AC6 /* SimpleFragment.glsl */,
+				D0CF3C6D1540EA7800C1302E /* SimpleShader */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -295,6 +294,15 @@
 				D071638E153E712C00D4E9B8 /* ccTypes.h */,
 			);
 			name = CC3D;
+			sourceTree = "<group>";
+		};
+		D0CF3C6D1540EA7800C1302E /* SimpleShader */ = {
+			isa = PBXGroup;
+			children = (
+				D05039D8153F9F52008A1AC6 /* SimpleVertex.glsl */,
+				D05039D9153F9F52008A1AC6 /* SimpleFragment.glsl */,
+			);
+			name = SimpleShader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,10 +420,10 @@
 				D0716390153E712C00D4E9B8 /* CC3GLMatrix.m in Sources */,
 				D0716391153E712C00D4E9B8 /* CC3Kazmath.c in Sources */,
 				D0716392153E712C00D4E9B8 /* CC3Math.m in Sources */,
-				D0239348153E7E2A0041E325 /* GameViewController.m in Sources */,
+				D0239348153E7E2A0041E325 /* SimpleShaderViewController.m in Sources */,
 				D05039CA153F9BC1008A1AC6 /* OGLVBO.m in Sources */,
 				D05039D0153F9C3A008A1AC6 /* OGLProgram.m in Sources */,
-				D05039D6153F9F1D008A1AC6 /* Cube.m in Sources */,
+				D05039D6153F9F1D008A1AC6 /* Car.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

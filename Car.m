@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 WillowTree Apps. All rights reserved.
 //
 
-#import "Cube.h"
+#import "Car.h"
 
 #import "CC3GLMatrix.h"
 #import "OGLProgram.h"
 
-#import "car.h"
+#import "carModel.h"
 
-@implementation Cube
+@implementation Car
 
 + (void)bufferData {
 

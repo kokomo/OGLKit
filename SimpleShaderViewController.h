@@ -10,7 +10,7 @@
 
 @class OGLProgram;
 
-@interface GameViewController : OGLViewController {
+@interface SimpleShaderViewController : OGLViewController {
     
     NSMutableArray *_vbos;
     

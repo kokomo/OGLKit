@@ -8,7 +8,7 @@
 
 #import "OGLAppDelegate.h"
 
-#import "GameViewController.h"
+#import "SimpleShaderViewController.h"
 
 @implementation OGLAppDelegate
 
@@ -18,7 +18,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    GameViewController *viewController = [[GameViewController alloc] initWithNibName:nil bundle:nil];
+    SimpleShaderViewController *viewController = [[SimpleShaderViewController alloc] initWithNibName:nil bundle:nil];
     self.window.rootViewController = viewController;
     
     [self.window makeKeyAndVisible];

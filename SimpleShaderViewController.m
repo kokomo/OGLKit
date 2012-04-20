@@ -6,18 +6,18 @@
 //  Copyright (c) 2012 WillowTree Apps. All rights reserved.
 //
 
-#import "GameViewController.h"
+#import "SimpleShaderViewController.h"
 
 #import "CC3GLMatrix.h"
 #import "OGLProgram.h"
 
-#import "Cube.h"
+#import "Car.h"
 
-@interface GameViewController ()
+@interface SimpleShaderViewController ()
 
 @end
 
-@implementation GameViewController
+@implementation SimpleShaderViewController
 
 @synthesize simpleProgram = _simpleProgram;
 
@@ -29,17 +29,17 @@
         
         _vbos = [NSMutableArray new];
         
-        Cube *cube = [Cube new];
-        cube.yPos = -2.0f;
-        [cube setColorWithUIColor:[UIColor redColor]];
-        [_vbos addObject:cube];
+        Car *car = [Car new];
+        car.yPos = -2.0f;
+        [car setColorWithUIColor:[UIColor redColor]];
+        [_vbos addObject:car];
         
-        Cube *cube2 = [Cube new];
-        cube2.yPos = 0.5f;
-        cube2.xPos = 0.5f;
-        cube2.zPos = 2.0f;
-        [cube2 setColorWithUIColor:[UIColor blueColor]];
-        [_vbos addObject:cube2];
+        Car *car2 = [Car new];
+        car2.yPos = 0.5f;
+        car2.xPos = 0.5f;
+        car2.zPos = 2.0f;
+        [car2 setColorWithUIColor:[UIColor blueColor]];
+        [_vbos addObject:car2];
         
     }
     
@@ -85,7 +85,7 @@
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.simpleProgram];
         
     }
-        
+
     [self applyAppleMSAA];
     
     [_oglView.context presentRenderbuffer:GL_RENDERBUFFER];
@@ -106,7 +106,7 @@
 
 - (void)bufferVertexBufferObjects {
 
-    [Cube bufferData];
+    [Car bufferData];
     
 }
 
