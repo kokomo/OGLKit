@@ -1,23 +1,23 @@
 //
-//  GameViewController.m
+//  PhongShaderViewController.m
 //  OGLKit
 //
-//  Created by Andrew Carter on 4/18/12.
+//  Created by Andrew Carter on 4/19/12.
 //  Copyright (c) 2012 WillowTree Apps. All rights reserved.
 //
 
-#import "SimpleShaderViewController.h"
+#import "PhongShaderViewController.h"
 
 #import "CC3GLMatrix.h"
 #import "OGLProgram.h"
 
 #import "Car.h"
 
-@interface SimpleShaderViewController ()
+@interface PhongShaderViewController ()
 
 @end
 
-@implementation SimpleShaderViewController
+@implementation PhongShaderViewController
 
 @synthesize simpleProgram = _simpleProgram;
 
@@ -30,8 +30,16 @@
         _vbos = [NSMutableArray new];
         
         Car *car = [Car new];
+        car.yPos = -2.0f;
         [car setColorWithUIColor:[UIColor redColor]];
         [_vbos addObject:car];
+        
+        Car *car2 = [Car new];
+        car2.yPos = 0.5f;
+        car2.xPos = 0.5f;
+        car2.zPos = 2.0f;
+        [car2 setColorWithUIColor:[UIColor blueColor]];
+        [_vbos addObject:car2];
         
     }
     
@@ -57,28 +65,27 @@
     [projection populateFromFrustumLeft:-2.0f andRight:2.0f andBottom:-h / 2.0f andTop:h / 2.0f andNear:4.0f andFar:100.0f];
     
     glUniformMatrix4fv([_simpleProgram uniformIndex:@"Projection"], 1, GL_FALSE, projection.glMatrix);
-
+    
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     CC3GLMatrix *modelViewMatrix = [CC3GLMatrix identity];
-        
-    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, 0.0f)];
     
-    glUniform3f([_simpleProgram uniformIndex:@"u_LightPos"], 0.0, 0.0, -5.0f);
+    glUniform3f([_simpleProgram uniformIndex:@"LightDirection"], 15.0, 0.0, 0.0f);
+    
+    [modelViewMatrix translateBy:CC3VectorMake(0.0f, 0.0f, -10.0f)];
     
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
     for (OGLVBO *vbo in _vbos) {
-             
+        
         [scratchMatrix populateFrom:modelViewMatrix];
         vbo.yRot = sin(CACurrentMediaTime()) * 50.0f;
         vbo.zRot = sin(CACurrentMediaTime()) * 10.0f;
-        vbo.xRot = sin(CACurrentMediaTime()) * 40.0f;
-        vbo.xPos = sin(CACurrentMediaTime()) * 1.0f;
+        vbo.xRot = sin(CACurrentMediaTime()) * 5.0f;
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.simpleProgram];
         
     }
-
+    
     [self applyAppleMSAA];
     
     [_oglView.context presentRenderbuffer:GL_RENDERBUFFER];
@@ -87,18 +94,18 @@
 
 - (void)compileShaders {
     
-    self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"SimpleVertex" fragmentShader:@"SimpleFragment"];    
-
+    self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"PhongVertex" fragmentShader:@"PhongFragment"];    
+    
     GLuint positionSlot = [self.simpleProgram attributeIndex:@"Position"];
     GLuint normalSlot = [self.simpleProgram attributeIndex:@"Normal"];
     glEnableVertexAttribArray(positionSlot);
     glEnableVertexAttribArray(normalSlot);
     [self.simpleProgram use];
-
+    
 }
 
 - (void)bufferVertexBufferObjects {
-
+    
     [Car bufferData];
     
 }

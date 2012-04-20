@@ -35,6 +35,13 @@
 		D0716390153E712C00D4E9B8 /* CC3GLMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716388153E712C00D4E9B8 /* CC3GLMatrix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0716391153E712C00D4E9B8 /* CC3Kazmath.c in Sources */ = {isa = PBXBuildFile; fileRef = D0716389153E712C00D4E9B8 /* CC3Kazmath.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0716392153E712C00D4E9B8 /* CC3Math.m in Sources */ = {isa = PBXBuildFile; fileRef = D071638D153E712C00D4E9B8 /* CC3Math.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0CF3C711540F35900C1302E /* PhongShaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CF3C701540F35900C1302E /* PhongShaderViewController.m */; };
+		D0CF3C741540F83700C1302E /* PhongVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D0CF3C731540F83700C1302E /* PhongVertex.glsl */; };
+		D0CF3C761540F84500C1302E /* PhongFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D0CF3C751540F84500C1302E /* PhongFragment.glsl */; };
+		D0CF3C861541097400C1302E /* GoraudShaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CF3C851541097400C1302E /* GoraudShaderViewController.m */; };
+		D0CF3C8915410A3900C1302E /* GoraudVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D0CF3C8815410A3900C1302E /* GoraudVertex.glsl */; };
+		D0CF3C8B15410A4500C1302E /* GoraudFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D0CF3C8A15410A4500C1302E /* GoraudFragment.glsl */; };
+		D0CF3C8F1541117E00C1302E /* ShadeCar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CF3C8E1541117E00C1302E /* ShadeCar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +86,16 @@
 		D071638C153E712C00D4E9B8 /* CC3Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Math.h; sourceTree = "<group>"; };
 		D071638D153E712C00D4E9B8 /* CC3Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Math.m; sourceTree = "<group>"; };
 		D071638E153E712C00D4E9B8 /* ccTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccTypes.h; sourceTree = "<group>"; };
+		D0CF3C6F1540F35900C1302E /* PhongShaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhongShaderViewController.h; sourceTree = "<group>"; };
+		D0CF3C701540F35900C1302E /* PhongShaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhongShaderViewController.m; sourceTree = "<group>"; };
+		D0CF3C731540F83700C1302E /* PhongVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhongVertex.glsl; sourceTree = "<group>"; };
+		D0CF3C751540F84500C1302E /* PhongFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhongFragment.glsl; sourceTree = "<group>"; };
+		D0CF3C841541097400C1302E /* GoraudShaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoraudShaderViewController.h; sourceTree = "<group>"; };
+		D0CF3C851541097400C1302E /* GoraudShaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoraudShaderViewController.m; sourceTree = "<group>"; };
+		D0CF3C8815410A3900C1302E /* GoraudVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoraudVertex.glsl; sourceTree = "<group>"; };
+		D0CF3C8A15410A4500C1302E /* GoraudFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoraudFragment.glsl; sourceTree = "<group>"; };
+		D0CF3C8D1541117E00C1302E /* ShadeCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadeCar.h; sourceTree = "<group>"; };
+		D0CF3C8E1541117E00C1302E /* ShadeCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadeCar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				D05039D7153F9F49008A1AC6 /* Shaders */,
-				D05039D3153F9F03008A1AC6 /* Cube */,
 				D0239345153E7DEF0041E325 /* ViewControllers */,
 				D0716372153E6DFE00D4E9B8 /* OGLAppDelegate */,
 			);
@@ -137,7 +153,9 @@
 		D0239345153E7DEF0041E325 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D05039D2153F9EF9008A1AC6 /* GameViewController */,
+				D0CF3C831541094900C1302E /* GouraudShaderViewController */,
+				D0CF3C6E1540F2B900C1302E /* PhongShaderViewController */,
+				D05039D2153F9EF9008A1AC6 /* SimpleShaderViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -160,28 +178,31 @@
 			name = OGLProgram;
 			sourceTree = "<group>";
 		};
-		D05039D2153F9EF9008A1AC6 /* GameViewController */ = {
+		D05039D2153F9EF9008A1AC6 /* SimpleShaderViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D05039D3153F9F03008A1AC6 /* Car */,
 				D0239346153E7E2A0041E325 /* SimpleShaderViewController.h */,
 				D0239347153E7E2A0041E325 /* SimpleShaderViewController.m */,
 			);
-			name = GameViewController;
+			name = SimpleShaderViewController;
 			sourceTree = "<group>";
 		};
-		D05039D3153F9F03008A1AC6 /* Cube */ = {
+		D05039D3153F9F03008A1AC6 /* Car */ = {
 			isa = PBXGroup;
 			children = (
 				228890D91540ACDD0095EFCF /* carModel.h */,
 				D05039D4153F9F1D008A1AC6 /* Car.h */,
 				D05039D5153F9F1D008A1AC6 /* Car.m */,
 			);
-			name = Cube;
+			name = Car;
 			sourceTree = "<group>";
 		};
 		D05039D7153F9F49008A1AC6 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				D0CF3C8715410A2500C1302E /* GoraudShader */,
+				D0CF3C721540F82400C1302E /* PhoneShader */,
 				D0CF3C6D1540EA7800C1302E /* SimpleShader */,
 			);
 			name = Shaders;
@@ -305,6 +326,52 @@
 			name = SimpleShader;
 			sourceTree = "<group>";
 		};
+		D0CF3C6E1540F2B900C1302E /* PhongShaderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D0CF3C6F1540F35900C1302E /* PhongShaderViewController.h */,
+				D0CF3C701540F35900C1302E /* PhongShaderViewController.m */,
+			);
+			name = PhongShaderViewController;
+			sourceTree = "<group>";
+		};
+		D0CF3C721540F82400C1302E /* PhoneShader */ = {
+			isa = PBXGroup;
+			children = (
+				D0CF3C731540F83700C1302E /* PhongVertex.glsl */,
+				D0CF3C751540F84500C1302E /* PhongFragment.glsl */,
+			);
+			name = PhoneShader;
+			sourceTree = "<group>";
+		};
+		D0CF3C831541094900C1302E /* GouraudShaderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D0CF3C8C1541116700C1302E /* ShadeCar */,
+				D0CF3C841541097400C1302E /* GoraudShaderViewController.h */,
+				D0CF3C851541097400C1302E /* GoraudShaderViewController.m */,
+			);
+			name = GouraudShaderViewController;
+			sourceTree = "<group>";
+		};
+		D0CF3C8715410A2500C1302E /* GoraudShader */ = {
+			isa = PBXGroup;
+			children = (
+				D0CF3C8815410A3900C1302E /* GoraudVertex.glsl */,
+				D0CF3C8A15410A4500C1302E /* GoraudFragment.glsl */,
+			);
+			name = GoraudShader;
+			sourceTree = "<group>";
+		};
+		D0CF3C8C1541116700C1302E /* ShadeCar */ = {
+			isa = PBXGroup;
+			children = (
+				D0CF3C8D1541117E00C1302E /* ShadeCar.h */,
+				D0CF3C8E1541117E00C1302E /* ShadeCar.m */,
+			);
+			name = ShadeCar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -390,6 +457,10 @@
 				D0716366153E6DE900D4E9B8 /* InfoPlist.strings in Resources */,
 				D05039DA153F9F52008A1AC6 /* SimpleVertex.glsl in Resources */,
 				D05039DB153F9F52008A1AC6 /* SimpleFragment.glsl in Resources */,
+				D0CF3C741540F83700C1302E /* PhongVertex.glsl in Resources */,
+				D0CF3C761540F84500C1302E /* PhongFragment.glsl in Resources */,
+				D0CF3C8915410A3900C1302E /* GoraudVertex.glsl in Resources */,
+				D0CF3C8B15410A4500C1302E /* GoraudFragment.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +495,9 @@
 				D05039CA153F9BC1008A1AC6 /* OGLVBO.m in Sources */,
 				D05039D0153F9C3A008A1AC6 /* OGLProgram.m in Sources */,
 				D05039D6153F9F1D008A1AC6 /* Car.m in Sources */,
+				D0CF3C711540F35900C1302E /* PhongShaderViewController.m in Sources */,
+				D0CF3C861541097400C1302E /* GoraudShaderViewController.m in Sources */,
+				D0CF3C8F1541117E00C1302E /* ShadeCar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

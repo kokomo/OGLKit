@@ -16,8 +16,7 @@
 @implementation Car
 
 + (void)bufferData {
-
-  
+    
     GLuint cubeVertexBuffer = 0;
     glGenBuffers(1, &cubeVertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, cubeVertexBuffer);
@@ -71,8 +70,6 @@
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     
-
-
 }
 
 @end
