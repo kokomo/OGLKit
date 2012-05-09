@@ -6,41 +6,63 @@
 //  Copyright (c) 2012 WillowTree Apps. All rights reserved.
 //
 
-#import "Car.h"
+#import "Ship.h"
 
 #import "CC3GLMatrix.h"
 #import "OGLProgram.h"
 
-#import "carModel.h"
+#import "shipModel.h"
 
-@implementation Car
+#import <CoreMotion/CoreMotion.h>
+
+@implementation Ship
+
+@synthesize motionManager = _motionManager;
 
 + (void)bufferData {
     
     GLuint cubeVertexBuffer = 0;
     glGenBuffers(1, &cubeVertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, cubeVertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(shipVertices), shipVertices, GL_STATIC_DRAW);
     [self addResourceID:cubeVertexBuffer forKey:@"CubeVertexData"];
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
     GLuint cubeIndexBuffer = 0;
     glGenBuffers(1, &cubeIndexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cubeIndexBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(vertexIndicies), vertexIndicies, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(shipVertexIndicies), shipVertexIndicies, GL_STATIC_DRAW);
     [self addResourceID:cubeIndexBuffer forKey:@"CubeVertexIndexData"];
-    [self addResourceID:sizeof(vertexIndicies) / sizeof(vertexIndicies[0]) forKey:@"CubeVertexCount"];
+    [self addResourceID:sizeof(shipVertexIndicies) / sizeof(shipVertexIndicies[0]) forKey:@"CubeVertexCount"];
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     
     GLuint cubeNormalVertexBuffer = 0;
     glGenBuffers(1, &cubeNormalVertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, cubeNormalVertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(normals), normals, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(shipNormals), shipNormals, GL_STATIC_DRAW);
     [self addResourceID:cubeNormalVertexBuffer forKey:@"CubeNormalData"];
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
 }
 
+- (void)updateWithTimeInterval:(CFTimeInterval)delta {
+    
+    CMDeviceMotion *deviceMotion = self.motionManager.deviceMotion;
+
+    double roll = deviceMotion.attitude.roll;
+    
+    roll = roll < -1.0f ? -1.0f : roll;
+    roll = roll > 1.0 ? 1.0f : roll;
+
+
+    float newXPos = self.xPos + (20.0f * (fabs(roll) / 1.0f) * delta * (roll < 0.0f ? -1.0f : 1.0f));
+    
+    newXPos = newXPos > 6.5f ? 6.5f : newXPos;
+    newXPos = newXPos < -6.5f ? -6.5f : newXPos;
+
+    self.xPos = newXPos;
+    
+}
 
 - (void)drawWithModelViewMatrix:(CC3GLMatrix *)modelViewMatrix program:(OGLProgram *)program {
     

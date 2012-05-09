@@ -24,9 +24,11 @@
 		D05039CF153F9C3A008A1AC6 /* OGLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = D05039CD153F9C3A008A1AC6 /* OGLProgram.h */; };
 		D05039D0153F9C3A008A1AC6 /* OGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039CE153F9C3A008A1AC6 /* OGLProgram.m */; };
 		D05039D1153F9C3A008A1AC6 /* OGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039CE153F9C3A008A1AC6 /* OGLProgram.m */; };
-		D05039D6153F9F1D008A1AC6 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039D5153F9F1D008A1AC6 /* Car.m */; };
+		D05039D6153F9F1D008A1AC6 /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039D5153F9F1D008A1AC6 /* Ship.m */; };
 		D05039DA153F9F52008A1AC6 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D8153F9F52008A1AC6 /* SimpleVertex.glsl */; };
 		D05039DB153F9F52008A1AC6 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D9153F9F52008A1AC6 /* SimpleFragment.glsl */; };
+		D0534AB8155A0D3600F345A5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0534AB7155A0D3600F345A5 /* CoreMotion.framework */; };
+		D0534ABD155A249800F345A5 /* Lazer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0534ABC155A249800F345A5 /* Lazer.m */; };
 		D071635C153E6DE900D4E9B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635B153E6DE900D4E9B8 /* UIKit.framework */; };
 		D071635E153E6DE900D4E9B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635D153E6DE900D4E9B8 /* Foundation.framework */; };
 		D0716360153E6DE900D4E9B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635F153E6DE900D4E9B8 /* CoreGraphics.framework */; };
@@ -49,7 +51,7 @@
 		226A98A4154201EA00041D1A /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		226A98A5154201EA00041D1A /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
 		226A98A91542025E00041D1A /* boxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boxModel.h; sourceTree = "<group>"; };
-		228890D91540ACDD0095EFCF /* carModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carModel.h; sourceTree = "<group>"; };
+		228890D91540ACDD0095EFCF /* shipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipModel.h; sourceTree = "<group>"; };
 		D0239335153E7C240041E325 /* libOGLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOGLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0239339153E7C240041E325 /* libOGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libOGLKit-Prefix.pch"; sourceTree = "<group>"; };
 		D023933A153E7C240041E325 /* libOGLKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOGLKit.h; sourceTree = "<group>"; };
@@ -60,10 +62,13 @@
 		D05039C8153F9BC1008A1AC6 /* OGLVBO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLVBO.m; sourceTree = "<group>"; };
 		D05039CD153F9C3A008A1AC6 /* OGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLProgram.h; sourceTree = "<group>"; };
 		D05039CE153F9C3A008A1AC6 /* OGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLProgram.m; sourceTree = "<group>"; };
-		D05039D4153F9F1D008A1AC6 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		D05039D5153F9F1D008A1AC6 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		D05039D4153F9F1D008A1AC6 /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
+		D05039D5153F9F1D008A1AC6 /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
 		D05039D8153F9F52008A1AC6 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
 		D05039D9153F9F52008A1AC6 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
+		D0534AB7155A0D3600F345A5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		D0534ABB155A249800F345A5 /* Lazer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lazer.h; sourceTree = "<group>"; };
+		D0534ABC155A249800F345A5 /* Lazer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lazer.m; sourceTree = "<group>"; };
 		D0716357153E6DE900D4E9B8 /* OGLKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OGLKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D071635B153E6DE900D4E9B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D071635D153E6DE900D4E9B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0534AB8155A0D3600F345A5 /* CoreMotion.framework in Frameworks */,
 				D0716382153E6FA500D4E9B8 /* QuartzCore.framework in Frameworks */,
 				D0716380153E6F9D00D4E9B8 /* OpenGLES.framework in Frameworks */,
 				D071635C153E6DE900D4E9B8 /* UIKit.framework in Frameworks */,
@@ -192,6 +198,7 @@
 		D05039D2153F9EF9008A1AC6 /* SimpleShaderViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D0534ABA155A248600F345A5 /* Lazer */,
 				226A98A3154201CF00041D1A /* Box */,
 				D05039D3153F9F03008A1AC6 /* Car */,
 				D0239346153E7E2A0041E325 /* SimpleShaderViewController.h */,
@@ -203,9 +210,9 @@
 		D05039D3153F9F03008A1AC6 /* Car */ = {
 			isa = PBXGroup;
 			children = (
-				228890D91540ACDD0095EFCF /* carModel.h */,
-				D05039D4153F9F1D008A1AC6 /* Car.h */,
-				D05039D5153F9F1D008A1AC6 /* Car.m */,
+				228890D91540ACDD0095EFCF /* shipModel.h */,
+				D05039D4153F9F1D008A1AC6 /* Ship.h */,
+				D05039D5153F9F1D008A1AC6 /* Ship.m */,
 			);
 			name = Car;
 			sourceTree = "<group>";
@@ -216,6 +223,15 @@
 				D0CF3C6D1540EA7800C1302E /* SimpleShader */,
 			);
 			name = Shaders;
+			sourceTree = "<group>";
+		};
+		D0534ABA155A248600F345A5 /* Lazer */ = {
+			isa = PBXGroup;
+			children = (
+				D0534ABB155A249800F345A5 /* Lazer.h */,
+				D0534ABC155A249800F345A5 /* Lazer.m */,
+			);
+			name = Lazer;
 			sourceTree = "<group>";
 		};
 		D071634C153E6DE900D4E9B8 = {
@@ -241,6 +257,7 @@
 		D071635A153E6DE900D4E9B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0534AB7155A0D3600F345A5 /* CoreMotion.framework */,
 				D0716381153E6FA500D4E9B8 /* QuartzCore.framework */,
 				D071637F153E6F9D00D4E9B8 /* OpenGLES.framework */,
 				D071635B153E6DE900D4E9B8 /* UIKit.framework */,
@@ -459,9 +476,10 @@
 				D0239348153E7E2A0041E325 /* SimpleShaderViewController.m in Sources */,
 				D05039CA153F9BC1008A1AC6 /* OGLVBO.m in Sources */,
 				D05039D0153F9C3A008A1AC6 /* OGLProgram.m in Sources */,
-				D05039D6153F9F1D008A1AC6 /* Car.m in Sources */,
+				D05039D6153F9F1D008A1AC6 /* Ship.m in Sources */,
 				226A98A11541FFD000041D1A /* OGLCamera.m in Sources */,
 				226A98A7154201EA00041D1A /* Box.m in Sources */,
+				D0534ABD155A249800F345A5 /* Lazer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

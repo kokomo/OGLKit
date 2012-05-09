@@ -57,6 +57,18 @@
     
 }
 
+- (void)update {
+    
+    //meant to be used by subclass
+    
+}
+
+- (void)updateWithTimeInterval:(CFTimeInterval)delta {
+    
+    //meant to be used by subclass
+    
+}
+
 - (void)drawWithModelViewMatrix:(CC3GLMatrix *)modelViewMatrix program:(OGLProgram *)program {
     
     //meant to be used by subclass

@@ -13,10 +13,16 @@
 
 #import "OGLCamera.h"
 
-#import "Car.h"
+#import "Ship.h"
 #import "Box.h"
 
+#import "Lazer.h"
+
+#import <CoreMotion/CoreMotion.h>
+
 @interface SimpleShaderViewController ()
+
+- (void)fireLazer;
 
 @end
 
@@ -31,12 +37,25 @@
     
     if (self) {
         
+        _motionManager = [CMMotionManager new];
+        [_motionManager startGyroUpdates];
+        [_motionManager startAccelerometerUpdates];
+        
+        _coreMotionQueue = [NSOperationQueue new];
+        
         _vbos = [NSMutableArray new];
 
-        Car *car = [Car new];
-        [car setColorWithUIColor:[UIColor redColor]];
-        car.yRot = 50.0f;
-        [_vbos addObject:car];
+        _ship = [Ship new];
+        [_ship setColorWithUIColor:[UIColor blueColor]];
+        _ship.zPos = 7.0f;
+        _ship.yRot = 180.0f;
+        _ship.motionManager = _motionManager;
+        [_vbos addObject:_ship];
+        
+        _camera = [OGLCamera new];
+        _camera.zPos = -15.0f;
+        _camera.yPos = 0.0f;
+        _camera.xRot = 90.0f;
         
         Box *box = [Box new];
         box.yPos = -1.5f;
@@ -44,12 +63,8 @@
         box.zScale = 10.0f;
         [box setColorWithUIColor:[UIColor brownColor]];
         [_vbos addObject:box];
-        
-        _camera = [OGLCamera new];
-        _camera.zPos = -10.0f;
-        _camera.yPos = -4.0f;
-        _camera.yRot = 40.0f;
-
+                
+        [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(fireLazer) userInfo:nil repeats:YES];
         
     }
     
@@ -57,7 +72,31 @@
     
 }
 
+- (void)fireLazer {
+    
+    Lazer *lazer = [Lazer new];
+    [lazer setColorWithUIColor:[UIColor redColor]];
+    lazer.xPos = _ship.xPos;
+    lazer.zPos = _ship.zPos - 3.0f;
+    [_vbos addObject:lazer];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    [_motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryCorrectedZVertical toQueue:_coreMotionQueue withHandler:^(CMDeviceMotion *motion, NSError *error) {
+       
+        _ship.zRot = motion.attitude.roll * 60;
+        
+    }];
+
+}
+
 - (void)draw:(CADisplayLink *)displayLink {
+    
+    CFTimeInterval timeDelta = displayLink.duration;
     
     glClearColor(0.0f / 255.0f, 127.5f / 255.0f, 0.0f / 255.0f, 1.0f);
     
@@ -86,15 +125,27 @@
     
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
-    self.camera.zPos = (sin(CACurrentMediaTime()) * 5.0f) - 7.0f;
+    NSMutableArray *objectsToDestroy = [NSMutableArray array];
     
     for (OGLVBO *vbo in _vbos) {
              
         [scratchMatrix populateFrom:modelViewMatrix];
 
+        [vbo updateWithTimeInterval:timeDelta];
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.simpleProgram];
         
+        if ([vbo isKindOfClass:[Lazer class]]) {
+            
+            Lazer *lazer = (Lazer *)vbo;
+            if (lazer.shouldDestroy) {
+                [objectsToDestroy addObject:lazer];
+            }
+            
+        }
+        
     }
+    
+    [_vbos removeObjectsInArray:objectsToDestroy];
 
     [self applyAppleMSAA];
     
@@ -116,8 +167,10 @@
 
 - (void)bufferVertexBufferObjects {
 
-    [Car bufferData];
+    [Ship bufferData];
     [Box bufferData];
 }
+
+
 
 @end

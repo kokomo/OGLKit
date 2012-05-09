@@ -52,21 +52,6 @@
         4, 7, 0, 
         5, 6, 4, 
     };
-    GLuint bnormalIndicies[] = {
-        0, 2, 1, 
-        0, 5, 4, 
-        0, 7, 3, 
-        1, 5, 0, 
-        1, 6, 5, 
-        2, 6, 1, 
-        2, 7, 6, 
-        3, 2, 0, 
-        3, 7, 2, 
-        4, 6, 7, 
-        4, 7, 0, 
-        5, 6, 4, 
-    };
-
     
     GLuint cubeVertexBuffer = 0;
     glGenBuffers(1, &cubeVertexBuffer);

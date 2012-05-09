@@ -8,6 +8,10 @@
 
 #import "OGLVBO.h"
 
-@interface Car : OGLVBO
+@class CMMotionManager;
+
+@interface Ship : OGLVBO
+
+@property (nonatomic, weak) CMMotionManager *motionManager;
 
 @end

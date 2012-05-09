@@ -10,11 +10,16 @@
 
 @class OGLProgram;
 @class OGLCamera;
+@class CMMotionManager;
+@class Ship;
 
 @interface SimpleShaderViewController : OGLViewController {
     
     NSMutableArray *_vbos;
     OGLCamera *_camera;
+    CMMotionManager *_motionManager;
+    NSOperationQueue *_coreMotionQueue;
+    Ship *_ship;
     
 }
 

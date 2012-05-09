@@ -30,9 +30,9 @@
 @property (nonatomic, assign) GLfloat xRot;
 @property (nonatomic, assign) GLfloat yRot;
 @property (nonatomic, assign) GLfloat zRot;
-@property (nonatomic, assign) GLfixed xScale;
-@property (nonatomic, assign) GLfixed yScale;
-@property (nonatomic, assign) GLfixed zScale;
+@property (nonatomic, assign) GLfloat xScale;
+@property (nonatomic, assign) GLfloat yScale;
+@property (nonatomic, assign) GLfloat zScale;
 
 @property (nonatomic, strong) NSMutableData *color;
 
@@ -41,6 +41,10 @@
 
 // Draw VBO in model view matrix with the given program
 - (void)drawWithModelViewMatrix:(CC3GLMatrix *)modelViewMatrix program:(OGLProgram *)program;
+
+// Update position / etc
+- (void)update;
+- (void)updateWithTimeInterval:(CFTimeInterval)delta;
 
 // Easy methods for setting a color array
 - (void)setColorWithArray:(GLfloat *)array;
