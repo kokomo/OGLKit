@@ -18,6 +18,7 @@
     
         self.xScale = 0.1f;
         self.zScale = 1.0f;
+        self.yScale = 0.1f;
         
     }
     
