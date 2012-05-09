@@ -121,7 +121,7 @@
         
     [modelViewMatrix translateBy:CC3VectorMake(self.camera.xPos, self.camera.yPos, self.camera.zPos) rotateBy:CC3VectorMake(self.camera.xRot, self.camera.yRot, self.camera.zRot) scaleBy:CC3VectorMake(1.0f, 1.0f, 1.0f)];
     
-    glUniform3f([_simpleProgram uniformIndex:@"u_LightPos"], 0.0f, -1.0f, 0.0f);
+    glUniform3f([_simpleProgram uniformIndex:@"u_LightPos"], -0.3f, -1.0f, 0.0f);
     
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
     
