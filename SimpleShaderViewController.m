@@ -111,7 +111,10 @@
     
     [projection populateFromFrustumLeft:-2.0f andRight:2.0f andBottom:-h / 2.0f andTop:h / 2.0f andNear:4.0f andFar:100.0f];
     
+    [self.ADSProgram use];
+    
     glUniformMatrix4fv([self.ADSProgram uniformIndex:@"Projection"], 1, GL_FALSE, projection.glMatrix);
+    
 
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
@@ -125,9 +128,7 @@
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
                  
     [scratchMatrix populateFrom:modelViewMatrix];
-
-    [self.ADSProgram use];
-    
+        
     [_ship updateWithTimeInterval:timeDelta];
     [_ship drawWithModelViewMatrix:scratchMatrix program:self.ADSProgram];
     
@@ -139,6 +140,18 @@
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.ADSProgram];
         
     }
+        
+    GLenum x = glGetError();
+    
+    while (x != GL_NO_ERROR) {
+        NSLog(@"%u", x);
+        x = glGetError();
+    }
+    
+    
+    [self.simpleProgram use];
+    
+    glUniformMatrix4fv([self.simpleProgram uniformIndex:@"Projection"], 1, GL_FALSE, projection.glMatrix);
     
     NSMutableArray *objectsToDestroy = [NSMutableArray array];
         
@@ -147,7 +160,7 @@
         [scratchMatrix populateFrom:modelViewMatrix];
         
         [lazer updateWithTimeInterval:timeDelta];
-        [lazer drawWithModelViewMatrix:scratchMatrix program:self.ADSProgram];
+        [lazer drawWithModelViewMatrix:scratchMatrix program:self.simpleProgram];
         
         if (lazer.shouldDestroy) {
             [objectsToDestroy addObject:lazer];
@@ -169,13 +182,15 @@
 
     GLuint positionSlot = [self.ADSProgram attributeIndex:@"Position"];
     GLuint normalSlot = [self.ADSProgram attributeIndex:@"Normal"];
+    [self.ADSProgram use];
     glEnableVertexAttribArray(positionSlot);
     glEnableVertexAttribArray(normalSlot);
 
     self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"SimpleVertex" fragmentShader:@"SimpleFragment"];
+    [self.simpleProgram use];
     positionSlot = [self.simpleProgram attributeIndex:@"Position"];
     glEnableVertexAttribArray(positionSlot);
-    
+
 }
 
 - (void)bufferVertexBufferObjects {
