@@ -15,15 +15,17 @@
 
 @interface SimpleShaderViewController : OGLViewController {
     
-    NSMutableArray *_vbos;
     OGLCamera *_camera;
     CMMotionManager *_motionManager;
     NSOperationQueue *_coreMotionQueue;
     Ship *_ship;
+    NSMutableArray *_bullets;
+    NSMutableArray *_worldObjects;
     
 }
 
-@property (nonatomic, strong) OGLProgram *simpleProgram;
+@property (nonatomic, strong) OGLProgram *ADSProgram;
 @property (nonatomic, strong) OGLCamera *camera;
+@property (nonatomic, strong) OGLProgram *simpleProgram;
 
 @end
