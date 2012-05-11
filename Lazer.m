@@ -33,7 +33,7 @@
     
     self.zPos -= 40 * delta;
     
-    if (self.zPos < -15) {
+    if (self.zPos < -45) {
         
         self.shouldDestroy = YES;
         

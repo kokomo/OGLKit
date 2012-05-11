@@ -28,8 +28,10 @@
 		D05039D0153F9C3A008A1AC6 /* OGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039CE153F9C3A008A1AC6 /* OGLProgram.m */; };
 		D05039D1153F9C3A008A1AC6 /* OGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039CE153F9C3A008A1AC6 /* OGLProgram.m */; };
 		D05039D6153F9F1D008A1AC6 /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039D5153F9F1D008A1AC6 /* Ship.m */; };
-		D05039DA153F9F52008A1AC6 /* ADSVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D8153F9F52008A1AC6 /* ADSVertex.glsl */; };
-		D05039DB153F9F52008A1AC6 /* ADSFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D9153F9F52008A1AC6 /* ADSFragment.glsl */; };
+		D05039DA153F9F52008A1AC6 /* AVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D8153F9F52008A1AC6 /* AVertex.glsl */; };
+		D05039DB153F9F52008A1AC6 /* AFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D05039D9153F9F52008A1AC6 /* AFragment.glsl */; };
+		D052DD89155CDA53006F2DB6 /* ADSVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D052DD88155CDA53006F2DB6 /* ADSVertex.glsl */; };
+		D052DD8B155CDA61006F2DB6 /* ADSFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = D052DD8A155CDA61006F2DB6 /* ADSFragment.glsl */; };
 		D0534AB8155A0D3600F345A5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0534AB7155A0D3600F345A5 /* CoreMotion.framework */; };
 		D0534ABD155A249800F345A5 /* Lazer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0534ABC155A249800F345A5 /* Lazer.m */; };
 		D071635C153E6DE900D4E9B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D071635B153E6DE900D4E9B8 /* UIKit.framework */; };
@@ -70,8 +72,10 @@
 		D05039CE153F9C3A008A1AC6 /* OGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLProgram.m; sourceTree = "<group>"; };
 		D05039D4153F9F1D008A1AC6 /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
 		D05039D5153F9F1D008A1AC6 /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
-		D05039D8153F9F52008A1AC6 /* ADSVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ADSVertex.glsl; sourceTree = "<group>"; };
-		D05039D9153F9F52008A1AC6 /* ADSFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ADSFragment.glsl; sourceTree = "<group>"; };
+		D05039D8153F9F52008A1AC6 /* AVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AVertex.glsl; sourceTree = "<group>"; };
+		D05039D9153F9F52008A1AC6 /* AFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFragment.glsl; sourceTree = "<group>"; };
+		D052DD88155CDA53006F2DB6 /* ADSVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ADSVertex.glsl; sourceTree = "<group>"; };
+		D052DD8A155CDA61006F2DB6 /* ADSFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ADSFragment.glsl; sourceTree = "<group>"; };
 		D0534AB7155A0D3600F345A5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D0534ABB155A249800F345A5 /* Lazer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lazer.h; sourceTree = "<group>"; };
 		D0534ABC155A249800F345A5 /* Lazer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lazer.m; sourceTree = "<group>"; };
@@ -244,10 +248,20 @@
 		D05039D7153F9F49008A1AC6 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				D052DD87155CDA43006F2DB6 /* ADS */,
 				D022F008155B3C1C005A604D /* SimpleShader */,
-				D0CF3C6D1540EA7800C1302E /* ADS */,
+				D0CF3C6D1540EA7800C1302E /* A */,
 			);
 			name = Shaders;
+			sourceTree = "<group>";
+		};
+		D052DD87155CDA43006F2DB6 /* ADS */ = {
+			isa = PBXGroup;
+			children = (
+				D052DD88155CDA53006F2DB6 /* ADSVertex.glsl */,
+				D052DD8A155CDA61006F2DB6 /* ADSFragment.glsl */,
+			);
+			name = ADS;
 			sourceTree = "<group>";
 		};
 		D0534ABA155A248600F345A5 /* Lazer */ = {
@@ -370,13 +384,13 @@
 			name = CC3D;
 			sourceTree = "<group>";
 		};
-		D0CF3C6D1540EA7800C1302E /* ADS */ = {
+		D0CF3C6D1540EA7800C1302E /* A */ = {
 			isa = PBXGroup;
 			children = (
-				D05039D8153F9F52008A1AC6 /* ADSVertex.glsl */,
-				D05039D9153F9F52008A1AC6 /* ADSFragment.glsl */,
+				D05039D8153F9F52008A1AC6 /* AVertex.glsl */,
+				D05039D9153F9F52008A1AC6 /* AFragment.glsl */,
 			);
-			name = ADS;
+			name = A;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,11 +478,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0716366153E6DE900D4E9B8 /* InfoPlist.strings in Resources */,
-				D05039DA153F9F52008A1AC6 /* ADSVertex.glsl in Resources */,
-				D05039DB153F9F52008A1AC6 /* ADSFragment.glsl in Resources */,
+				D05039DA153F9F52008A1AC6 /* AVertex.glsl in Resources */,
+				D05039DB153F9F52008A1AC6 /* AFragment.glsl in Resources */,
 				D022F00A155B3C3F005A604D /* SimpleVertex.glsl in Resources */,
 				D022F00C155B3C4C005A604D /* SimpleFragment.glsl in Resources */,
 				D047E981155CB9710001F7B4 /* grass.png in Resources */,
+				D052DD89155CDA53006F2DB6 /* ADSVertex.glsl in Resources */,
+				D052DD8B155CDA61006F2DB6 /* ADSFragment.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

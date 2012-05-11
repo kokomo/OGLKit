@@ -16,9 +16,27 @@
 
 @implementation Box
 
-- (void)updateWithTimeInterval:(CFTimeInterval)delta {
+//- (void)updateWithTimeInterval:(CFTimeInterval)delta {
+//    
+//    self.zPos += 20.0f * delta;
+//    
+//    if (self.zPos >= 0.0f) {
+//        
+//        self.zPos = -100.0f;
+//        
+//    }
+//    
+//}
+
+- (void)update {
     
-    self.zPos += 20 * delta;
+    self.zPos += 1.0f;
+    
+    if (self.zPos >= 0.0f) {
+        
+        self.zPos = -100.0f;
+        
+    }
     
 }
 
@@ -33,7 +51,7 @@
     GLubyte *grassData = (GLubyte *)calloc(width * height * 4, sizeof(GLubyte));
     
     CGContextRef grassContext = CGBitmapContextCreate(grassData, width, height, 8, width * 4, CGImageGetColorSpace(grassRef), kCGImageAlphaPremultipliedLast);
-        
+    
     CGContextDrawImage(grassContext, CGRectMake(0.0f, 0.0f, width, height), grassRef);
     
     CGContextRelease(grassContext);
@@ -92,14 +110,14 @@
     };
     
     GLfloat bTexVertices[] = {
-        32,0,
-        32,32,
-        0,32,
+        4,0,
+        4,4,
+        0,4,
         0,0,
         
-        32,0,
-        32,32,
-        0,32,
+        4,0,
+        4,4,
+        0,4,
         0,0,
         
     };

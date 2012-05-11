@@ -24,8 +24,9 @@
     
 }
 
-@property (nonatomic, strong) OGLProgram *ADSProgram;
+@property (nonatomic, strong) OGLProgram *AProgram;
 @property (nonatomic, strong) OGLCamera *camera;
 @property (nonatomic, strong) OGLProgram *simpleProgram;
+@property (nonatomic, strong) OGLProgram *ADSProgram;
 
 @end
