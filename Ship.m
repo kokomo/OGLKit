@@ -75,7 +75,7 @@
     GLuint sourceColorAttribute = [program uniformIndex:@"SourceColor"];
     GLuint cubeVertexCount =[OGLVBO resourceIDForKey:@"CubeVertexCount"];
     
-    [modelViewMatrix translateBy:CC3VectorMake(self.xPos, self.yPos, self.zPos) rotateBy:CC3VectorMake(self.xRot, self.yRot, self.zRot) scaleBy:CC3VectorMake(1.0f, 1.0f, 1.0f)];
+    [modelViewMatrix translateBy:CC3VectorMake(self.xPos, self.yPos, self.zPos) rotateBy:CC3VectorMake(self.xRot, self.yRot, self.zRot) scaleBy:CC3VectorMake(self.xScale, self.yScale, self.zScale)];
     glUniformMatrix4fv(modelViewAttribute, 1, GL_FALSE, modelViewMatrix.glMatrix);
     glUniform4fv(sourceColorAttribute, 1, [self.color mutableBytes]);
         

@@ -52,6 +52,9 @@
         [_ship setColorWithUIColor:[UIColor blueColor]];
         _ship.zPos = -10.0f;
         _ship.yPos = 5.0f;
+        _ship.xScale = 1.5f;
+        _ship.yScale = 1.5f;
+        _ship.zScale = 1.5f;
         _ship.yRot = 180.0f;
         _ship.motionManager = _motionManager;
         

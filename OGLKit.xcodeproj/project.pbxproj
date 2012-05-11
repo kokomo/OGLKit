@@ -56,7 +56,7 @@
 		226A98A4154201EA00041D1A /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		226A98A5154201EA00041D1A /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
 		226A98A91542025E00041D1A /* boxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boxModel.h; sourceTree = "<group>"; };
-		228890D91540ACDD0095EFCF /* shipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipModel.h; sourceTree = "<group>"; };
+		22E12F94155DBD2000FA846B /* shipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipModel.h; sourceTree = "<group>"; };
 		D022F009155B3C3F005A604D /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
 		D022F00B155B3C4C005A604D /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
 		D0239335153E7C240041E325 /* libOGLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOGLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,7 +238,7 @@
 		D05039D3153F9F03008A1AC6 /* Car */ = {
 			isa = PBXGroup;
 			children = (
-				228890D91540ACDD0095EFCF /* shipModel.h */,
+				22E12F94155DBD2000FA846B /* shipModel.h */,
 				D05039D4153F9F1D008A1AC6 /* Ship.h */,
 				D05039D5153F9F1D008A1AC6 /* Ship.m */,
 			);
