@@ -20,6 +20,7 @@
 		D0239341153E7C460041E325 /* OGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716379153E6E5700D4E9B8 /* OGLView.m */; };
 		D0239342153E7C510041E325 /* OGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0716375153E6E3100D4E9B8 /* OGLViewController.m */; };
 		D0239348153E7E2A0041E325 /* SimpleShaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0239347153E7E2A0041E325 /* SimpleShaderViewController.m */; };
+		D047E979155CADC10001F7B4 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = D047E978155CADC10001F7B4 /* grass.png */; };
 		D05039C9153F9BC1008A1AC6 /* OGLVBO.h in Headers */ = {isa = PBXBuildFile; fileRef = D05039C7153F9BC1008A1AC6 /* OGLVBO.h */; };
 		D05039CA153F9BC1008A1AC6 /* OGLVBO.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039C8153F9BC1008A1AC6 /* OGLVBO.m */; };
 		D05039CB153F9BC1008A1AC6 /* OGLVBO.m in Sources */ = {isa = PBXBuildFile; fileRef = D05039C8153F9BC1008A1AC6 /* OGLVBO.m */; };
@@ -62,6 +63,7 @@
 		D023933B153E7C240041E325 /* libOGLKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libOGLKit.m; sourceTree = "<group>"; };
 		D0239346153E7E2A0041E325 /* SimpleShaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleShaderViewController.h; sourceTree = "<group>"; };
 		D0239347153E7E2A0041E325 /* SimpleShaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleShaderViewController.m; sourceTree = "<group>"; };
+		D047E978155CADC10001F7B4 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 		D05039C7153F9BC1008A1AC6 /* OGLVBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLVBO.h; sourceTree = "<group>"; };
 		D05039C8153F9BC1008A1AC6 /* OGLVBO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLVBO.m; sourceTree = "<group>"; };
 		D05039CD153F9C3A008A1AC6 /* OGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLProgram.h; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		D0239343153E7D950041E325 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D047E976155CADBA0001F7B4 /* assets */,
 				D05039D7153F9F49008A1AC6 /* Shaders */,
 				D0239345153E7DEF0041E325 /* ViewControllers */,
 				D0716372153E6DFE00D4E9B8 /* OGLAppDelegate */,
@@ -188,6 +191,14 @@
 				D05039D2153F9EF9008A1AC6 /* SimpleShaderViewController */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D047E976155CADBA0001F7B4 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				D047E978155CADC10001F7B4 /* grass.png */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 		D05039C5153F9B5C008A1AC6 /* OGLVBO */ = {
@@ -457,6 +468,7 @@
 				D05039DB153F9F52008A1AC6 /* ADSFragment.glsl in Resources */,
 				D022F00A155B3C3F005A604D /* SimpleVertex.glsl in Resources */,
 				D022F00C155B3C4C005A604D /* SimpleFragment.glsl in Resources */,
+				D047E979155CADC10001F7B4 /* grass.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

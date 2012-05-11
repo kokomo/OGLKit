@@ -51,6 +51,12 @@
     
 }
 
++ (void)loadTextures {
+    
+    //meant to be used by subclass
+    
+}
+
 + (void)bufferData {
     
     //meant to be used by subclass
@@ -120,6 +126,33 @@
     });
     
     return resourceIDs;
+}
+
++ (NSMutableDictionary *)textures {
+    
+    static NSMutableDictionary *textures = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        textures = [NSMutableDictionary new];
+    });
+    
+    return textures;
+    
+}
+
++ (void)addTexture:(GLuint)texture forKey:(NSString *)key {
+    
+    [[self textures] setObject:[NSNumber numberWithUnsignedInt:texture] forKey:key];
+
+}
+
++ (GLuint)textureForKey:(NSString *)key {
+    
+    NSNumber *texture = [[self textures] objectForKey:key];
+    
+    return [texture unsignedIntValue];
+    
 }
 
 @end

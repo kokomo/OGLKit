@@ -10,11 +10,41 @@
 
 #import "CC3GLMatrix.h"
 #import "OGLProgram.h"
-
+#import <CoreGraphics/CoreGraphics.h>
 
 #import "boxModel.h"
 
 @implementation Box
+
++ (void)loadTextures {
+    
+    UIImage *grassImage = [UIImage imageNamed:@"grass.png"];
+    CGImageRef grassRef = [grassImage CGImage];
+    
+    size_t width = CGImageGetWidth(grassRef);
+    size_t height = CGImageGetHeight(grassRef);
+    
+    GLubyte *grassData = (GLubyte *)calloc(width * height * 4, sizeof(GLubyte));
+    
+    CGContextRef grassContext = CGBitmapContextCreate(grassData, width, height, 8, width * 4, CGImageGetColorSpace(grassRef), kCGImageAlphaPremultipliedLast);
+        
+    CGContextDrawImage(grassContext, CGRectMake(0.0f, 0.0f, width, height), grassRef);
+    
+    CGContextRelease(grassContext);
+    
+    GLuint grassName;
+    glGenTextures(1, &grassName);
+    glBindTexture(GL_TEXTURE_2D, grassName);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, grassData);
+    
+    free(grassData);
+    
+    [OGLVBO addTexture:grassName forKey:@"grass"];
+    
+}
 
 + (void)bufferData {
     

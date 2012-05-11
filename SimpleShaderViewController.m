@@ -129,8 +129,8 @@
                  
     [scratchMatrix populateFrom:modelViewMatrix];
         
-    [_ship updateWithTimeInterval:timeDelta];
-    [_ship drawWithModelViewMatrix:scratchMatrix program:self.ADSProgram];
+//    [_ship updateWithTimeInterval:timeDelta];
+//    [_ship drawWithModelViewMatrix:scratchMatrix program:self.ADSProgram];
     
     for (OGLVBO *vbo in _worldObjects) {
         
@@ -140,15 +140,7 @@
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.ADSProgram];
         
     }
-        
-    GLenum x = glGetError();
-    
-    while (x != GL_NO_ERROR) {
-        NSLog(@"%u", x);
-        x = glGetError();
-    }
-    
-    
+            
     [self.simpleProgram use];
     
     glUniformMatrix4fv([self.simpleProgram uniformIndex:@"Projection"], 1, GL_FALSE, projection.glMatrix);
@@ -197,6 +189,8 @@
 
     [Ship bufferData];
     [Box bufferData];
+    [Box loadTextures];
+    
 }
 
 

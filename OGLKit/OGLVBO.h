@@ -39,6 +39,8 @@
 // Buffer VBO data in this method
 + (void)bufferData;
 
++ (void)loadTextures;
+
 // Draw VBO in model view matrix with the given program
 - (void)drawWithModelViewMatrix:(CC3GLMatrix *)modelViewMatrix program:(OGLProgram *)program;
 
@@ -52,5 +54,8 @@
 
 + (void)addResourceID:(GLuint)resourceID forKey:(NSString *)key;
 + (GLuint)resourceIDForKey:(NSString *)key;
+
++ (void)addTexture:(GLuint)texture forKey:(NSString *)key;
++ (GLuint)textureForKey:(NSString *)key;
 
 @end
