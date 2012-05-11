@@ -58,11 +58,18 @@
         _camera.yPos = -10.0f;
         
         Box *box = [Box new];
-        box.xScale = 100.0f;
-        box.yScale = 100.0f;
+        box.xScale = 50.0f;
+        box.yScale = 50.0f;
         box.zPos = -40.0f;
         box.xRot = -90.0f;
         [_worldObjects addObject:box];
+        
+        Box *box2 = [Box new];
+        box2.xScale = 50.0f;
+        box2.yScale = 50.0f;
+        box2.zPos = -140.0f;
+        box2.xRot = -90.0f;
+        [_worldObjects addObject:box2];
                         
     }
     
@@ -93,9 +100,7 @@
 }
 
 - (void)draw:(CADisplayLink *)displayLink {
-    
-    _camera.zPos += 0.1f;
-    
+        
     CFTimeInterval timeDelta = displayLink.duration;
     
     glClearColor(0.0f / 255.0f, 127.5f / 255.0f, 0.0f / 255.0f, 1.0f);

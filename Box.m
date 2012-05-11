@@ -18,7 +18,7 @@
 
 - (void)updateWithTimeInterval:(CFTimeInterval)delta {
     
-//    self.zPos += 10 * delta;
+    self.zPos += 20 * delta;
     
 }
 
