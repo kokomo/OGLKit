@@ -54,19 +54,16 @@
         _ship.motionManager = _motionManager;
         
         _camera = [OGLCamera new];
-        _camera.zPos = -15.0f;
-        _camera.yPos = 0.0f;
-        _camera.xRot = 90.0f;
+        _camera.zPos = 0.0f;
+        _camera.yPos = -10.0f;
         
         Box *box = [Box new];
-        box.yPos = -1.5f;
-        box.xScale = 10.0f;
-        box.zScale = 10.0f;
-        [box setColorWithUIColor:[UIColor brownColor]];
+        box.xScale = 100.0f;
+        box.yScale = 100.0f;
+        box.zPos = -40.0f;
+        box.xRot = -90.0f;
         [_worldObjects addObject:box];
-                
-        [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(fireLazer) userInfo:nil repeats:YES];
-        
+                        
     }
     
     return self;
@@ -97,6 +94,8 @@
 
 - (void)draw:(CADisplayLink *)displayLink {
     
+    _camera.zPos += 0.1f;
+    
     CFTimeInterval timeDelta = displayLink.duration;
     
     glClearColor(0.0f / 255.0f, 127.5f / 255.0f, 0.0f / 255.0f, 1.0f);
@@ -123,7 +122,7 @@
         
     [modelViewMatrix translateBy:CC3VectorMake(self.camera.xPos, self.camera.yPos, self.camera.zPos) rotateBy:CC3VectorMake(self.camera.xRot, self.camera.yRot, self.camera.zRot) scaleBy:CC3VectorMake(1.0f, 1.0f, 1.0f)];
     
-    glUniform3f([self.ADSProgram uniformIndex:@"u_LightPos"], -0.3f, -1.0f, 0.0f);
+    glUniform3f([self.ADSProgram uniformIndex:@"u_LightPos"], 0.0f, -1.0f, 0.0f);
     
     CC3GLMatrix *scratchMatrix = [CC3GLMatrix matrix];
                  
@@ -133,7 +132,7 @@
 //    [_ship drawWithModelViewMatrix:scratchMatrix program:self.ADSProgram];
     
     for (OGLVBO *vbo in _worldObjects) {
-        
+
         [scratchMatrix populateFrom:modelViewMatrix];
         
         [vbo updateWithTimeInterval:timeDelta];
@@ -174,9 +173,11 @@
 
     GLuint positionSlot = [self.ADSProgram attributeIndex:@"Position"];
     GLuint normalSlot = [self.ADSProgram attributeIndex:@"Normal"];
+    GLuint textureCoordinateSlot = [self.ADSProgram attributeIndex:@"TexCoordIn"];
     [self.ADSProgram use];
     glEnableVertexAttribArray(positionSlot);
     glEnableVertexAttribArray(normalSlot);
+    glEnableVertexAttribArray(textureCoordinateSlot);
 
     self.simpleProgram = [[OGLProgram alloc] initWithVertexShader:@"SimpleVertex" fragmentShader:@"SimpleFragment"];
     [self.simpleProgram use];

@@ -16,6 +16,12 @@
 
 @implementation Box
 
+- (void)updateWithTimeInterval:(CFTimeInterval)delta {
+    
+//    self.zPos += 10 * delta;
+    
+}
+
 + (void)loadTextures {
     
     UIImage *grassImage = [UIImage imageNamed:@"grass.png"];
@@ -36,7 +42,7 @@
     glGenTextures(1, &grassName);
     glBindTexture(GL_TEXTURE_2D, grassName);
     
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, grassData);
     
@@ -58,6 +64,7 @@
         1.00000000f, 1.00000000f, -1.00000000f,
         1.00000000f, -1.00000000f, -1.00000000f,
     };
+    
     GLfloat bnormals[] = {
         -0.57735027f, -0.57735027f, 0.57735027f,
         -0.40824829f, 0.81649658f, 0.40824829f,
@@ -68,6 +75,7 @@
         0.33333333f, 0.66666667f, -0.66666667f,
         0.66666667f, -0.66666667f, -0.33333333f,
     };
+    
     GLuint bvertexIndicies[] = {
         0, 2, 1, 
         0, 5, 4, 
@@ -81,6 +89,19 @@
         4, 6, 7, 
         4, 7, 0, 
         5, 6, 4, 
+    };
+    
+    GLfloat bTexVertices[] = {
+        32,0,
+        32,32,
+        0,32,
+        0,0,
+        
+        32,0,
+        32,32,
+        0,32,
+        0,0,
+        
     };
     
     GLuint cubeVertexBuffer = 0;
@@ -105,6 +126,13 @@
     [self addResourceID:cubeNormalVertexBuffer forKey:@"BoxNormalData"];
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
+    GLuint cubeTexVertexBuffer = 0;
+    glGenBuffers(1, &cubeTexVertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, cubeTexVertexBuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(bTexVertices), bTexVertices, GL_STATIC_DRAW);
+    [self addResourceID:cubeTexVertexBuffer forKey:@"BoxTextureVertexData"];
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    
 }
 
 
@@ -112,12 +140,15 @@
     
     GLuint positionSlot = [program attributeIndex:@"Position"];
     GLuint normalSlot = [program attributeIndex:@"Normal"];
+    GLuint textureCoordinateSlot = [program attributeIndex:@"TexCoordIn"];
     GLuint cubeVertexIndexAttribute = [OGLVBO resourceIDForKey:@"BoxVertexIndexData"];
     GLuint cubeVertexDataAttribute = [OGLVBO resourceIDForKey:@"BoxVertexData"];
     GLuint cubeNormalDataAttribute = [OGLVBO resourceIDForKey:@"BoxNormalData"];
     GLuint modelViewAttribute = [program uniformIndex:@"Modelview"];
     GLuint sourceColorAttribute = [program uniformIndex:@"SourceColor"];
+    GLuint textureUniform = [program uniformIndex:@"Texture"];
     GLuint cubeVertexCount =[OGLVBO resourceIDForKey:@"BoxVertexCount"];
+    GLuint cubeTextVertexDataAttribute = [OGLVBO resourceIDForKey:@"BoxTextureVertexData"];
     
     [modelViewMatrix translateBy:CC3VectorMake(self.xPos, self.yPos, self.zPos) rotateBy:CC3VectorMake(self.xRot, self.yRot, self.zRot) scaleBy:CC3VectorMake(self.xScale, self.yScale, self.zScale)];
     glUniformMatrix4fv(modelViewAttribute, 1, GL_FALSE, modelViewMatrix.glMatrix);
@@ -130,6 +161,13 @@
     
     glBindBuffer(GL_ARRAY_BUFFER, cubeNormalDataAttribute);
     glVertexAttribPointer(normalSlot, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, cubeTextVertexDataAttribute);
+    glVertexAttribPointer(textureCoordinateSlot, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, [OGLVBO textureForKey:@"grass"]);
+    glUniform1i(textureUniform, 0);
     
     glDrawElements(GL_TRIANGLES, cubeVertexCount, GL_UNSIGNED_INT, 0);
     

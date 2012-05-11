@@ -9,6 +9,9 @@ varying vec4 v_Color;
 varying vec3 v_Position;       // This will be passed into the fragment shader.
 varying vec3 v_Normal;         // This will be passed into the fragment shader.
 
+attribute vec2 TexCoordIn;
+varying vec2 TexCoordOut;
+
 void main(void) { 
 
     vec4 newPosition = Projection * Modelview * Position;
@@ -20,5 +23,7 @@ void main(void) {
     gl_Position = newPosition;
     
     v_Color = SourceColor;
+
+    TexCoordOut = TexCoordIn;
 
 }
