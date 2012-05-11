@@ -16,21 +16,9 @@
 
 @implementation Box
 
-//- (void)updateWithTimeInterval:(CFTimeInterval)delta {
-//    
-//    self.zPos += 20.0f * delta;
-//    
-//    if (self.zPos >= 0.0f) {
-//        
-//        self.zPos = -100.0f;
-//        
-//    }
-//    
-//}
-
-- (void)update {
+- (void)updateWithTimeInterval:(CFTimeInterval)delta {
     
-    self.zPos += 1.0f;
+    self.zPos += 30.0f * delta;
     
     if (self.zPos >= 0.0f) {
         
@@ -39,6 +27,18 @@
     }
     
 }
+
+//- (void)update {
+//    
+//    self.zPos += 1.0f;
+//    
+//    if (self.zPos >= 0.0f) {
+//        
+//        self.zPos = -100.0f;
+//        
+//    }
+//    
+//}
 
 + (void)loadTextures {
     

@@ -172,7 +172,7 @@
         
         [scratchMatrix populateFrom:modelViewMatrix];
         
-        [vbo update];
+        [vbo updateWithTimeInterval:timeDelta];
         [vbo drawWithModelViewMatrix:scratchMatrix program:self.AProgram];
         
     }
